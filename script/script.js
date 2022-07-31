@@ -1,12 +1,12 @@
 function startTime(){
-    var today = new Date();
-    var hh = today.getHours();
-    var mm = today.getMinutes();
-    var ss = today.getSeconds();
+    let today = new Date();
+    let hh = today.getHours();
+    let mm = today.getMinutes();
+    let ss = today.getSeconds();
     mm = checkTime(mm);
     ss = checkTime(ss);
     document.getElementById('clock').innerHTML = hh + ":" + mm + ":" + ss;
-    var timeoutId = setTimeout(startTime, 500);
+    let timeoutId = setTimeout(startTime, 500);
   }
   
   function checkTime(i){
@@ -20,8 +20,25 @@ function startTime(){
 
   let searchBar = document.querySelector('#search')//文字框
 
+
+  let inputState =　true
+
+  searchBar.addEventListener('compositionupdate',function(ev){
+    inputState =　false
+  })//正在拼字
+
+  searchBar.addEventListener('compositionstart',function(ev){
+    inputState =　false
+  })//正在拼字或選字時更改了內容
+
+  searchBar.addEventListener('compositionend',function(ev){
+    inputState =　true
+  })//拼字或選字完成
+  
+
+
   searchBar.addEventListener('keydown',function(e){
-    if(e.code == 'Enter'){
+    if(e.code == 'Enter' && inputState == true && searchBar.value!=''){
       sendWords()
     }
   })//如果按下Enter就執行sendWords funsction
