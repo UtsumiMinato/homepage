@@ -19,6 +19,14 @@ function startTime(){
 
 
   let searchBar = document.querySelector('#search')//文字框
+  let searchBtn = document.querySelector('#search-btn')//收尋按鈕
+
+  searchBtn.addEventListener('click',function(){
+    if(inputState == true && searchBar.value!=''){
+      sendWords()
+    }
+  })
+
 
 
   let inputState =　true

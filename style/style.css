@@ -98,3 +98,7 @@ body{
     z-index: 1;
     color: #4f5b66;
   }
+
+#search-btn{
+    cursor: pointer;
+}
