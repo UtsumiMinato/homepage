@@ -1,8 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&family=Noto+Sans+JP:wght@400&family=Noto+Sans+TC:wght@400&family=Rajdhani:wght@500&display=swap');
 
-
-
 *{box-sizing: border-box;}
+
+
+
 html{
     height: 100%;
     /* background-color: rgb(173, 173, 173); */;
@@ -23,10 +24,6 @@ body{
 
 .bg{
     position: fixed;
-    /* top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0; */
     top:50%;
     left:50%; 
     margin-left:-960px;
@@ -48,7 +45,7 @@ body{
     background-color:rgba(255, 255, 255, 0);
     backdrop-filter: blur(2px);
     position: fixed;
-     top: 0;
+    top: 0;
     left: 0;
     bottom: 0;
     right: 0;
@@ -66,17 +63,28 @@ body{
  max-width: 800px;
  margin:0 auto 0 auto;
  height: auto;
+ min-width: 640px;
 }
 
 #clock{
+    height: 100px;
     margin-top: 15%;
     font-family:'Rajdhani', sans-serif;
     font-size: 450%;
     color: aliceblue;
-    display: flex;
-    justify-content: center;
     text-shadow: 0.05em 0.05em 0.1em rgb(133, 133, 133)
   }
+
+
+@keyframes clockAnime{
+    from {font-size: 450%;}
+    to {font-size: 500%;}
+}
+
+#clock:hover{
+    animation-name: clockAnime;
+    animation-duration: 1s;
+}
 
 .search{
     display: flex;
