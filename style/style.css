@@ -72,18 +72,16 @@ body{
     font-family:'Rajdhani', sans-serif;
     font-size: 450%;
     color: aliceblue;
-    text-shadow: 0.05em 0.05em 0.1em rgb(133, 133, 133)
+    text-shadow: 0.05em 0.05em 0.1em rgb(133, 133, 133);
+    transition-duration: 500ms;
   }
 
 
-@keyframes clockAnime{
-    from {font-size: 450%;}
-    to {font-size: 500%;}
-}
+
 
 #clock:hover{
-    animation-name: clockAnime;
-    animation-duration: 1s;
+    font-size: 500%;
+    transition-duration:  500ms;
 }
 
 .search{
