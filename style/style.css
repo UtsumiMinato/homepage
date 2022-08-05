@@ -25,10 +25,12 @@ body{
     height: 100%;
     width: 20%;
     min-width: 340px;
-    background-color: rgba(207, 207, 207, 0.507);
+    background-color: rgba(207, 207, 207, 0.699);
     display: flex;
     position: absolute;
     transform: translateX(-100%);
+    box-shadow: 5px 0px 5px rgba(85, 85, 85, 0.336);
+    transition: .5s;
 }
 .sideMenu nav a{
     display: block;
@@ -101,6 +103,7 @@ body{
     color: aliceblue;
     text-shadow: 0.05em 0.05em 0.1em rgb(133, 133, 133);
     transition-duration: 300ms;
+    cursor: pointer;
   }
 
 
