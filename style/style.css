@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&family=Noto+Sans+JP:wght@400&family=Noto+Sans+TC:wght@400&family=Rajdhani:wght@500&display=swap');
 
-*{box-sizing: border-box;}
+*{box-sizing: border-box; margin: 0; padding:0;}
 
 
 
@@ -17,9 +17,36 @@ body{
     background-attachment: fixed;
     background-position: center;
     background-size: cover;
-    
+    height: 100%;
 }
 
+
+.sideMenu{
+    height: 100%;
+    width: 20%;
+    min-width: 340px;
+    background-color: rgba(207, 207, 207, 0.507);
+    display: flex;
+    position: absolute;
+    transform: translateX(-100%);
+}
+.sideMenu nav a{
+    display: block;
+    padding: 15px;
+    font-size: 25px;
+    color: #31383f;
+    font-family: 'Noto Sans JP', sans-serif,'Noto Sans TC', sans-serif;
+    text-decoration: none;
+    position: relative;
+}
+.sideMenu nav a + a::before{
+    content: '';
+    position: absolute;
+    border-top: 1px solid #31383f;
+    left: 10px;
+    right: 10px;
+    top: 0px;
+}
 
 
 .bg{

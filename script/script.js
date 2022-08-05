@@ -9,68 +9,87 @@ function startTime(){
     let timeoutId = setTimeout(startTime, 500);
   }
   
-  function checkTime(i){
-    if(i < 10) {
-      i = "0" + i;
-    }
-    return i;
+
+//sideMenu開關
+let sideMenu = document.querySelector('.sideMenu');
+const clockBtn = document.querySelector('#clock');
+let clockClickNum = 0;
+
+clockBtn.addEventListener('click',function(){
+  if(clockClickNum % 2 == 0){
+    sideMenu.style.transform="translateX(0)";
+    clockClickNum +=1;
+  }  
+  else if(clockClickNum % 2 != 0){
+    sideMenu.style.transform="translateX(-100%)";
+    clockClickNum +=1;
   }
+})
 
 
 
-  let searchBar = document.querySelector('#search')//文字框
-  let searchBtn = document.querySelector('#search-btn')//收尋按鈕
-
-  searchBtn.addEventListener('click',function(){
-    if(inputState == true && searchBar.value!=''){
-      sendWords()
-    }
-  })
+function checkTime(i){
+  if(i < 10) {
+    i = "0" + i;
+  }
+  return i;
+}
 
 
 
-  let inputState =　true
+let searchBar = document.querySelector('#search')//文字框
+let searchBtn = document.querySelector('#search-btn')//收尋按鈕
 
-  searchBar.addEventListener('compositionupdate',function(ev){
-    inputState =　false
-  })//正在拼字
+searchBtn.addEventListener('click',function(){
+  if(inputState == true && searchBar.value!=''){
+    sendWords()
+  }
+})
 
-  searchBar.addEventListener('compositionstart',function(ev){
-    inputState =　false
-  })//正在拼字或選字時更改了內容
 
-  searchBar.addEventListener('compositionend',function(ev){
-    inputState =　true
-  })//拼字或選字完成
+
+let inputState =  true
+
+searchBar.addEventListener('compositionupdate',function(ev){
+  inputState = false
+})//正在拼字
+
+searchBar.addEventListener('compositionstart',function(ev){
+  inputState = false
+})//正在拼字或選字時更改了內容
+
+searchBar.addEventListener('compositionend',function(ev){
+  inputState = true
+})//拼字或選字完成
+
+
+
+searchBar.addEventListener('keydown',function(e){
+  if(e.code == 'Enter' && inputState == true && searchBar.value!=''){
+    sendWords()
+  }
+})//如果按下Enter就執行sendWords funsction
+
+
+function sendWords(){
+  if (searchBar.value.indexOf("www.") != -1) {
+    let searchUrl = "https://" + searchBar.value
+    document.location.href=searchUrl;
+    searchBar.value = ''
+    return false
+  }
+  else if(searchBar.value.indexOf(".") != -1){
+    let searchUrl = "https://www." + searchBar.value
+    document.location.href=searchUrl;
+    searchBar.value = ''
+    return false
+  }
+  else{
+    let searchUrl = "https://www.google.com/search?q=" + searchBar.value
+    document.location.href=searchUrl;
+    searchBar.value = ''
+    return false
+  }
   
-
-
-  searchBar.addEventListener('keydown',function(e){
-    if(e.code == 'Enter' && inputState == true && searchBar.value!=''){
-      sendWords()
-    }
-  })//如果按下Enter就執行sendWords funsction
-
-
-  function sendWords(){
-    if (searchBar.value.indexOf("www.") != -1) {
-      let searchUrl = "https://" + searchBar.value
-      document.location.href=searchUrl;
-      searchBar.value = ''
-      return false
-    }
-    else if(searchBar.value.indexOf(".") != -1){
-      let searchUrl = "https://www." + searchBar.value
-      document.location.href=searchUrl;
-      searchBar.value = ''
-      return false
-    }
-    else{
-      let searchUrl = "https://www.google.com/search?q=" + searchBar.value
-      document.location.href=searchUrl;
-      searchBar.value = ''
-      return false
-    }
-    
-    
-  }
+  
+}
