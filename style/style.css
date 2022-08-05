@@ -6,13 +6,11 @@
 
 html{
     height: 100%;
-    /* background-color: rgb(173, 173, 173); */;
-    /* backdrop-filter: blur(5px); */
+    
 
 }
 
 body{
-    /* background-image:url("../icon/20210717142216_1.jpg"); */
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center;
@@ -21,35 +19,39 @@ body{
 }
 
 
-.sideMenu{
+.side-menu{
+    color: #3f3f3f;
+    font-family: 'Noto Sans TC', sans-serif;
     height: 100%;
     width: 20%;
     min-width: 340px;
     background-color: rgba(207, 207, 207, 0.699);
     display: flex;
+    flex-direction: column;
     position: absolute;
     transform: translateX(-100%);
     box-shadow: 5px 0px 5px rgba(85, 85, 85, 0.336);
     transition: .5s;
-}
-.sideMenu nav a{
-    display: block;
-    padding: 15px;
-    font-size: 25px;
-    color: #31383f;
-    font-family: 'Noto Sans JP', sans-serif,'Noto Sans TC', sans-serif;
-    text-decoration: none;
-    position: relative;
-}
-.sideMenu nav a + a::before{
-    content: '';
-    position: absolute;
-    border-top: 1px solid #31383f;
-    left: 10px;
-    right: 10px;
-    top: 0px;
+    z-index: 2;
+    padding: 0px 15px 0px 15px
 }
 
+.side-menu div{
+    padding: 15px 0px 15px 0px;
+    border-bottom: 1px solid #666666;
+}
+
+.side-menu div h1{
+    padding-bottom:15px;
+}
+
+
+
+
+#language{
+    position: absolute;
+    padding:10px
+}
 
 .bg{
     position: fixed;
@@ -142,7 +144,7 @@ body{
     color: #4f5b66;
   }
 
-  .iconGoogle{
+  .icon-google{
     position: absolute;
     right: 95%;
     top: 30%;

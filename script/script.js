@@ -11,7 +11,7 @@ function startTime(){
   
 
 //sideMenu開關
-let sideMenu = document.querySelector('.sideMenu');
+let sideMenu = document.querySelector('.side-menu');
 const clockBtn = document.querySelector('#clock');
 let clockClickNum = 0;
 
