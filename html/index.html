@@ -8,7 +8,7 @@
     <link rel="icon" href="..\icon\128.ico" type="image/x-icon">
     <link rel="stylesheet" href="..\style\style.css" />
     <script src="https://kit.fontawesome.com/34eea40a1a.js" crossorigin="anonymous"></script>
-
+    <!-- <script src="../script/jquery-3.6.0.min.js"></script> -->
 </head>
 
 
@@ -16,7 +16,7 @@
     <form action="">
     <div id="setting-background-menu">
         <h2>背景：</h2>
-        <p> 選擇圖片:<input type="file" name="img" accept="image/*"></p>
+        <p> 選擇圖片:<input id="background-flie" type="file" name="img" accept="image/*"></p>
         
     </div>
     
@@ -56,11 +56,12 @@
 
 
 
-<body onload="startTime()">
+<body onload="startTime(),config()">
 
     <div class="bg">
         <div id="bg-m"></div>
-        <img src="../background/202207.png">
+        <img id="background-image" src="">
+        
     </div>
    
         <div class="wrap">
@@ -78,5 +79,6 @@
 
         </div>
     <script src="../script/script.js"></script>
+    <script src="../script/style.js"></script>
 </body>
 </html>
