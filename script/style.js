@@ -1,18 +1,8 @@
-// var requestURL = '../style/style.JSON';
-// var request = new XMLHttpRequest();
-// request.open('GET', requestURL);
-// request.responseType = 'json';
-// request.send(null);
-// request.onload = function() {
-//     var styleData = request.response;
-//     backgroundSet(styleData)
-//   }
-
-
 
 
 let backgroundFile = document.querySelector('#background-flie');
 let applyBtn = document.querySelector('.side-menu-apply');
+let cancleBtn = document.querySelector('.side-menu-cancle');
 let backgroundImage = document.querySelector('#background-image');
 
 
@@ -24,12 +14,16 @@ applyBtn.addEventListener('click',() => {
     backgroundSet()
 })
 
+cancleBtn.addEventListener('click',() => {
+    sideMenu.style.transform="translateX(-100%)"; 
+    clockClickNum +=1;
+})
 
 
 
 function backgroundSet(){
     let backgroundPath = '../background/' + backgroundFile.files[0]['name'];
-    backgroundImage.attributes[1].value = backgroundPath;
+    backgroundImage.src = backgroundPath;
     document.cookie =  `background=${backgroundPath}; expires=Tue, 19 Jan 2038 03:14:07 GMT; SameSite=none; Secure`;
 }
 
@@ -39,7 +33,7 @@ function backgroundSet(){
 
 
 function config(){
-    backgroundImage.attributes[1].value = getCookieByName('background');
+    backgroundImage.src = getCookieByName('background');
 }
 
 
