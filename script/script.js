@@ -76,19 +76,19 @@ function sendWords(){
     let searchUrl = "https://" + searchBar.value
     document.location.href=searchUrl;
     searchBar.value = ''
-    return false
+    
   }
   else if(searchBar.value.indexOf(".") != -1){
     let searchUrl = "https://www." + searchBar.value
     document.location.href=searchUrl;
     searchBar.value = ''
-    return false
+    
   }
   else{
     let searchUrl = "https://www.google.com/search?q=" + searchBar.value
     document.location.href=searchUrl;
     searchBar.value = ''
-    return false
+    
   }
   
   

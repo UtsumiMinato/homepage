@@ -14,34 +14,34 @@
 <div class="side-menu">
     <form action="">
     <div id="setting-background-menu">
-        <h2>背景：</h2>
-        <p> 選擇圖片:<input id="background-flie" type="file" name="img" accept="image/*"></p>
+        <h2 id="background-title"></h2>
+        <p><p id="select-image-title"></p><input id="background-flie" type="file" name="img" accept="image/*"></p>
         
     </div>
     
     <div id="setting-language-menu">
-        <h2>語言：</h2>
-        <select class="" id="font-family-select">
-            <option>中文</option>
-            <option>English</option>
-            <option>日本語</option>
+        <h2 id="language-title"></h2>
+        <select class="" id="language-select" name="value" onchange="valueChange();">
+            <option id="chineseTraditionalSet" value="chineseTraditionalSet">中文</option>
+            <option id="japaneseSet" value="engineUsSet">English</option>
+            <option id="engineUsSet" value="japaneseSet">日本語</option>
         </select>
         
     </div>
     
     <div id="setting-font-family-menu">
-        <h2>字型：</h2>
+        <h2 id="font-family-title"></h2>
         <select class="" id="font-family-select">
             
         </select>
     </div>
     
     <div id="setting-search-engine-menu">
-        <h2>搜尋引擎：</h2>
+        <h2 id='search-engine-title'></h2>
         <select class="" id="search-engine-select">
-            <option>Google</option>
-            <option>Yahoo</option>
-            <option>bing</option>
+            <option value="google">Google</option>
+            <option value="yahoo">Yahoo</option>
+            <option value="bing">bing</option>
         </select>
     </div>
     
