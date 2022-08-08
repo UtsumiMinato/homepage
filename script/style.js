@@ -33,22 +33,28 @@ let selectIimageTitlefont = document.querySelector('#select-image-title');
 let languageTitlefont = document.querySelector('#language-title');
 let fontFamilyTitlefont = document.querySelector('#font-family-title');
 let searchEngineTitlefont = document.querySelector('#search-engine-title');
+let serachFont = document.querySelector('#search');
+
+
 
 
 class language {
-    constructor(backgroundTitle, selectIimagetitle, languageTitle, fontFamilytitle,searchEnginetitle){
+    constructor(backgroundTitle, selectIimagetitle, languageTitle, fontFamilytitle,searchEnginetitle, searchFont, cancle, apply){
         this.backgroundTitle = backgroundTitle;
         this.selectIimageTitle = selectIimagetitle;
         this.languageTitle = languageTitle;
         this.fontFamilyTitle = fontFamilytitle;
         this.searchEngineTitle = searchEnginetitle;
+        this.searchFont = searchFont;
+        this.cancle = cancle;
+        this.apply = apply;
     }
     
 }
 
-var chineseTraditional = new language ('背景:', '選擇圖片:', '語言:', '字型:', '搜尋引擎:')
-var japanese = new language ('壁紙：', '画像を選択:', '言語:', 'フォント:', '検索エンジン:')
-var englishUS = new language ('Wallpaper:', 'Select image:', 'Language:', 'Fonts:', 'Search engine:')
+var chineseTraditional = new language ('背景:', '選擇圖片:', '語言:', '字型:', '搜尋引擎:','使用 Google 搜尋或輸入網址','取消','套用')
+var japanese = new language ('壁紙：', '画像を選択:', '言語:', 'フォント:', '検索エンジン:', 'Google で検索、または URL を入力します', 'キャンセル', 'アプライ')
+var englishUS = new language ('Wallpaper:', 'Select image:', 'Language:', 'Fonts:', 'Search engine:', 'Search with Google or enter address', 'cancle', 'apply')
 
 
 
@@ -58,6 +64,9 @@ function chineseTraditionalSet(){
     languageTitlefont.innerText = chineseTraditional.languageTitle;
     fontFamilyTitlefont.innerText = chineseTraditional.fontFamilyTitle;
     searchEngineTitlefont.innerText = chineseTraditional.searchEngineTitle;
+    serachFont.placeholder = chineseTraditional.searchFont;
+    applyBtn.innnerText = chineseTraditional.apply;
+    cancleBtn.innnerText = chineseTraditional.cancle;
     document.cookie = `language=chineseTraditionalSet; expires=Tue, 19 Jan 2038 03:14:07 GMT; SameSite=none; Secure`;
 }
 
@@ -67,6 +76,10 @@ function japaneseSet(){
     languageTitlefont.innerText = japanese.languageTitle;
     fontFamilyTitlefont.innerText = japanese.fontFamilyTitle;
     searchEngineTitlefont.innerText = japanese.searchEngineTitle;
+    serachFont.placeholder = japanese.searchFont;
+    applyBtn.innnerText = japanese.apply;
+    cancleBtn.innnerText = japanese.cancle;
+
     document.cookie = `language=japaneseSet; expires=Tue, 19 Jan 2038 03:14:07 GMT; SameSite=none; Secure`;
 }
 
@@ -76,6 +89,10 @@ function engineUSSet(){
     languageTitlefont.innerText = englishUS.languageTitle;
     fontFamilyTitlefont.innerText = englishUS.fontFamilyTitle;
     searchEngineTitlefont.innerText = englishUS.searchEngineTitle;
+    serachFont.placeholder = englishUS.searchFont;
+    applyBtn.innnerText = englishUS.apply;
+    cancleBtn.innnerText = englishUS.cancle;
+
     document.cookie = `language=engineUSSet; expires=Tue, 19 Jan 2038 03:14:07 GMT; SameSite=none; Secure`;
 }
 
@@ -96,30 +113,15 @@ function languageSet(language){
 
 
 function config(){
-    languageSet(getCookieByName('language'));
-    backgroundImage.src = getCookieByName('background');
+    languageSet(getCookie('language'));
+    backgroundImage.src = getCookie('background');
 }
 
+function getCookie(name) {
+    const value = `; ${document.cookie}`;
+    const parts = value.split(`; ${name}=`);
+    if (parts.length === 2) return parts.pop().split(';').shift();
+  }
 
 
 
-function parseCookie() {
-    let cookieObj = {};
-    let cookieAry = document.cookie.split(';');
-    let cookie;
-    
-    for (let i=0, l=cookieAry.length; i<l; ++i) {
-        if(cookieAry[i].includes('=')){
-        cookie = cookieAry[i].split('=');
-        cookieObj[cookie[0]] = cookie[1];
-        }
-    }
-    return cookieObj;
-}
-
-function getCookieByName(name) {
-    let value = parseCookie()[name];
-    if (value) 
-        value = decodeURIComponent(value);
-    return value;
-}
