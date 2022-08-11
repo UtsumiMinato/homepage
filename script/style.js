@@ -10,8 +10,10 @@ function valueChange(){
 
 
 applyBtn.addEventListener('click',() => {
+    if (backgroundFile.value.length != 0){
+        backgroundSet();
+    }
     languageSet(languageSelect)
-    backgroundSet();
 })
 
 cancleBtn.addEventListener('click',() => {
@@ -21,9 +23,9 @@ cancleBtn.addEventListener('click',() => {
 
 
 function backgroundSet(){
-    let backgroundPath = '../background/' + backgroundFile.files[0]['name'];
-    backgroundImage.src = backgroundPath;
-    document.cookie =  `background=${backgroundPath}; expires=Tue, 19 Jan 2038 03:14:07 GMT; SameSite=none; Secure`;
+        let backgroundPath = '../background/' + backgroundFile.value.split('\\')[2];
+        backgroundImage.src = backgroundPath;
+        document.cookie =  `background=${backgroundPath}; expires=Tue, 19 Jan 2038 03:14:07 GMT; SameSite=none; Secure`;
 }
 
 
