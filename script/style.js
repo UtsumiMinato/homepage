@@ -58,9 +58,9 @@ class language {
     
 }
 
-var chineseTraditional = new language ('背景:', '選擇圖片:', '語言:', '字型:', '搜尋引擎:','使用 Google 搜尋或輸入網址','取消','套用')
-var japanese = new language ('壁紙：', '画像を選択:', '言語:', 'フォント:', '検索エンジン:', 'Google で検索、または URL を入力します', 'キャンセル', 'アプライ')
-var englishUs = new language ('Wallpaper:', 'Select image:', 'Language:', 'Fonts:', 'Search engine:', 'Search with Google or enter address', 'cancle', 'apply')
+var chineseTraditional = new language ('背景:', '選擇圖片', '語言:', '字型:', '搜尋引擎:','使用 Google 搜尋或輸入網址','取消','套用')
+var japanese = new language ('壁紙：', '画像を選択', '言語:', 'フォント:', '検索エンジン:', 'Google で検索、または URL を入力します', 'キャンセル', 'アプライ')
+var englishUs = new language ('Wallpaper:', 'Select image', 'Language:', 'Fonts:', 'Search engine:', 'Search with Google or enter address', 'cancle', 'apply')
 
 
 
@@ -138,6 +138,12 @@ function languageSet(language){
     }
 }
 
+let backgroundName = document.querySelector('#background-name')
+
+
+function changeFileName(){
+    document.querySelector('#background-name').innerText = 'File：' + backgroundFile.value.split('\\')[2];
+}
 
 
 function config(){

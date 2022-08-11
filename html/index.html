@@ -15,8 +15,17 @@
     <form action="">
     <div id="setting-background-menu">
         <h2 id="background-title">背景:</h2>
-        <p><p id="select-image-title">選擇圖片:</p><input id="background-flie" type="file" name="img" accept="image/*"></p>
-        
+
+        <!-- <table class="file-btn-table">
+            <input id="background-flie" type="file" name="img" accept="image/*">
+            <i id="select-image-title">選擇圖片:</i>
+        </table> -->
+
+        <label class="file-btn-table">
+            <input id="background-flie" type="file" name="img" accept="image/*" oninput="changeFileName()">
+            <p id="select-image-title">選擇圖片:</p>
+        </label>
+        <p id="background-name">File：</p>
     </div>
     
     <div id="setting-language-menu">
