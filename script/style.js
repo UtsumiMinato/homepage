@@ -10,7 +10,7 @@ function valueChange(){
 
 
 applyBtn.addEventListener('click',() => {
-    languageSet(languageSelect);
+    languageSet(languageSelect)
     backgroundSet();
 })
 
@@ -67,7 +67,7 @@ function chineseTraditionalSet(){
     serachFont.placeholder = chineseTraditional.searchFont;
     applyBtn.innnerText = chineseTraditional.apply;
     cancleBtn.innnerText = chineseTraditional.cancle;
-    document.cookie = `language=chineseTraditionalSet; expires=Tue, 19 Jan 2038 03:14:07 GMT; SameSite=none; Secure`;
+    document.cookie = `language=chineseTraditional; expires=Tue, 19 Jan 2038 03:14:07 GMT; SameSite=none; Secure`;
 }
 
 function japaneseSet(){
@@ -80,7 +80,7 @@ function japaneseSet(){
     applyBtn.innnerText = japanese.apply;
     cancleBtn.innnerText = japanese.cancle;
 
-    document.cookie = `language=japaneseSet; expires=Tue, 19 Jan 2038 03:14:07 GMT; SameSite=none; Secure`;
+    document.cookie = `language=japanese; expires=Tue, 19 Jan 2038 03:14:07 GMT; SameSite=none; Secure`;
 }
 
 function engineUSSet(){
@@ -93,27 +93,47 @@ function engineUSSet(){
     applyBtn.innnerText = englishUS.apply;
     cancleBtn.innnerText = englishUS.cancle;
 
-    document.cookie = `language=engineUSSet; expires=Tue, 19 Jan 2038 03:14:07 GMT; SameSite=none; Secure`;
+    document.cookie = `language=engineUs; expires=Tue, 19 Jan 2038 03:14:07 GMT; SameSite=none; Secure`;
 }
 
 function languageSet(language){
-    if (language === 'chineseTraditionalSet'){
-        chineseTraditionalSet();
-    }
-    else if(language === 'japaneseSet'){
-        japaneseSet();
-    }
-    else if(language === 'engineUsSet'){
-        engineUSSet();
+    if(document.cookie.length === 0){
+        if(language === 'zh-TW'){
+            console.log('自動辨識中文');
+            chineseTraditionalSet();
+        }
+        else if (language === 'ja'){
+            console.log('自動辨識ja');
+            japaneseSet();
+        }
+        else if (language === 'en'){
+            console.log('自動辨識en');
+            engineUSSet();
+        }
+        else{
+            console.log('Language setting error');
+        }
     }
     else{
-        console.log('LanguageSettingError!!!')
+        if (language === 'chineseTraditional'){
+            chineseTraditionalSet();
+        }
+        else if(language === 'japanese'){
+            japaneseSet();
+        }
+        else if(language === 'engineUs'){
+            engineUSSet();
+        }
+        else{
+            console.log('Language automatic setting completed');
+        }
     }
 }
 
 
+
 function config(){
-    languageSet(getCookie('language'));
+    languageSet(window.navigator.language);
     backgroundImage.src = getCookie('background');
 }
 

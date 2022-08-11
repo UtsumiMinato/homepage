@@ -50,15 +50,15 @@ searchBtn.addEventListener('click',function(){
 
 let inputState =  true
 
-searchBar.addEventListener('compositionupdate',function(ev){
+searchBar.addEventListener('compositionupdate',function(){
   inputState = false
 })//正在拼字
 
-searchBar.addEventListener('compositionstart',function(ev){
+searchBar.addEventListener('compositionstart',function(){
   inputState = false
 })//正在拼字或選字時更改了內容
 
-searchBar.addEventListener('compositionend',function(ev){
+searchBar.addEventListener('compositionend',function(){
   inputState = true
 })//拼字或選字完成
 
