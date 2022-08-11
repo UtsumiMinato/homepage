@@ -34,6 +34,10 @@ let languageTitlefont = document.querySelector('#language-title');
 let fontFamilyTitlefont = document.querySelector('#font-family-title');
 let searchEngineTitlefont = document.querySelector('#search-engine-title');
 let serachFont = document.querySelector('#search');
+let chineseTraditionalOption = document.querySelector('#chineseTraditionalSet');
+let japaneseOption = document.querySelector('#japaneseSet');
+let englishUsOption = document.querySelector('#englishUsSet');
+
 
 
 
@@ -54,7 +58,7 @@ class language {
 
 var chineseTraditional = new language ('背景:', '選擇圖片:', '語言:', '字型:', '搜尋引擎:','使用 Google 搜尋或輸入網址','取消','套用')
 var japanese = new language ('壁紙：', '画像を選択:', '言語:', 'フォント:', '検索エンジン:', 'Google で検索、または URL を入力します', 'キャンセル', 'アプライ')
-var englishUS = new language ('Wallpaper:', 'Select image:', 'Language:', 'Fonts:', 'Search engine:', 'Search with Google or enter address', 'cancle', 'apply')
+var englishUs = new language ('Wallpaper:', 'Select image:', 'Language:', 'Fonts:', 'Search engine:', 'Search with Google or enter address', 'cancle', 'apply')
 
 
 
@@ -67,7 +71,7 @@ function chineseTraditionalSet(){
     serachFont.placeholder = chineseTraditional.searchFont;
     applyBtn.innnerText = chineseTraditional.apply;
     cancleBtn.innnerText = chineseTraditional.cancle;
-    // document.querySelector('#chineseTraditionalSet').selected = selected;
+    chineseTraditionalOption.selected=true
     document.cookie = `language=chineseTraditional; expires=Tue, 19 Jan 2038 03:14:07 GMT; SameSite=none; Secure`;
 }
 
@@ -80,21 +84,21 @@ function japaneseSet(){
     serachFont.placeholder = japanese.searchFont;
     applyBtn.innnerText = japanese.apply;
     cancleBtn.innnerText = japanese.cancle;
-    // document.querySelector('#japaneseSet').selected = selected;
+    japaneseOption.selected = true
     document.cookie = `language=japanese; expires=Tue, 19 Jan 2038 03:14:07 GMT; SameSite=none; Secure`;
 }
 
-function engineUSSet(){
-    backgroundTitlefont.innerText = englishUS.backgroundTitle;
-    selectIimageTitlefont.innerText = englishUS.selectIimageTitle;
-    languageTitlefont.innerText = englishUS.languageTitle;
-    fontFamilyTitlefont.innerText = englishUS.fontFamilyTitle;
-    searchEngineTitlefont.innerText = englishUS.searchEngineTitle;
-    serachFont.placeholder = englishUS.searchFont;
-    applyBtn.innnerText = englishUS.apply;
-    cancleBtn.innnerText = englishUS.cancle;
-    // document.querySelector('#engineUsSet').selected = selected;
-    document.cookie = `language=engineUs; expires=Tue, 19 Jan 2038 03:14:07 GMT; SameSite=none; Secure`;
+function englishUsSet(){
+    backgroundTitlefont.innerText = englishUs.backgroundTitle;
+    selectIimageTitlefont.innerText = englishUs.selectIimageTitle;
+    languageTitlefont.innerText = englishUs.languageTitle;
+    fontFamilyTitlefont.innerText = englishUs.fontFamilyTitle;
+    searchEngineTitlefont.innerText = englishUs.searchEngineTitle;
+    serachFont.placeholder = englishUs.searchFont;
+    applyBtn.innnerText = englishUs.apply;
+    cancleBtn.innnerText = englishUs.cancle;
+    englishUsOption.selected = true
+    document.cookie = `language=englishUs; expires=Tue, 19 Jan 2038 03:14:07 GMT; SameSite=none; Secure`;
 }
 function languageSet(language){
     if(document.cookie.length === 0){
@@ -102,14 +106,18 @@ function languageSet(language){
         if(language === 'zh-TW'){
             console.log('自動辨識中文');
             chineseTraditionalSet();
+            
         }
         else if (language === 'ja'){
             console.log('自動辨識ja');
             japaneseSet();
+            
+            
         }
         else if (language === 'en'){
             console.log('自動辨識en');
-            engineUSSet();
+            englishUsSet();
+            
         }
         else{
             console.log('Language setting error');
@@ -122,8 +130,8 @@ function languageSet(language){
         else if(language === 'japanese'){
             japaneseSet();
         }
-        else if(language === 'engineUs'){
-            engineUSSet();
+        else if(language === 'englishUs'){
+            englishUsSet();
         }
         else{
             console.log('Language automatic setting completed');
@@ -136,7 +144,7 @@ function languageSet(language){
 function config(){
     languageSet(window.navigator.language);
     if (document.cookie.length > 0){
-        languageSet(languageSelect);
+        languageSet(getCookie('language'));
     }
     backgroundImage.src = getCookie('background');
 }
