@@ -160,3 +160,10 @@ body{
 #search-btn{
     cursor: pointer;
 }
+
+.side-menu-cancle,.side-menu-apply{
+    text-decoration:none;
+    color:rgb(63, 63, 63);
+    margin: 0px 5px; 
+    cursor: pointer;
+}

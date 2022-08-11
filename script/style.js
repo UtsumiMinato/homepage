@@ -45,15 +45,15 @@ let englishUsOption = document.querySelector('#englishUsSet');
 
 
 class language {
-    constructor(backgroundTitle, selectIimagetitle, languageTitle, fontFamilytitle,searchEnginetitle, searchFont, cancle, apply){
+    constructor(backgroundTitle, selectIimagetitle, languageTitle, fontFamilytitle,searchEnginetitle, searchFont, cancleFont, applyFont){
         this.backgroundTitle = backgroundTitle;
         this.selectIimageTitle = selectIimagetitle;
         this.languageTitle = languageTitle;
         this.fontFamilyTitle = fontFamilytitle;
         this.searchEngineTitle = searchEnginetitle;
         this.searchFont = searchFont;
-        this.cancle = cancle;
-        this.apply = apply;
+        this.cancleFont = cancleFont;
+        this.applyFont = applyFont;
     }
     
 }
@@ -71,8 +71,8 @@ function chineseTraditionalSet(){
     fontFamilyTitlefont.innerText = chineseTraditional.fontFamilyTitle;
     searchEngineTitlefont.innerText = chineseTraditional.searchEngineTitle;
     serachFont.placeholder = chineseTraditional.searchFont;
-    applyBtn.innnerText = chineseTraditional.apply;
-    cancleBtn.innnerText = chineseTraditional.cancle;
+    applyBtn.innerText = chineseTraditional.applyFont;
+    cancleBtn.innerText = chineseTraditional.cancleFont;
     chineseTraditionalOption.selected=true
     document.cookie = `language=chineseTraditional; expires=Tue, 19 Jan 2038 03:14:07 GMT; SameSite=none; Secure`;
 }
@@ -84,8 +84,8 @@ function japaneseSet(){
     fontFamilyTitlefont.innerText = japanese.fontFamilyTitle;
     searchEngineTitlefont.innerText = japanese.searchEngineTitle;
     serachFont.placeholder = japanese.searchFont;
-    applyBtn.innnerText = japanese.apply;
-    cancleBtn.innnerText = japanese.cancle;
+    applyBtn.innerText = japanese.applyFont;
+    cancleBtn.innerText = japanese.cancleFont;
     japaneseOption.selected = true
     document.cookie = `language=japanese; expires=Tue, 19 Jan 2038 03:14:07 GMT; SameSite=none; Secure`;
 }
@@ -97,8 +97,8 @@ function englishUsSet(){
     fontFamilyTitlefont.innerText = englishUs.fontFamilyTitle;
     searchEngineTitlefont.innerText = englishUs.searchEngineTitle;
     serachFont.placeholder = englishUs.searchFont;
-    applyBtn.innnerText = englishUs.apply;
-    cancleBtn.innnerText = englishUs.cancle;
+    applyBtn.innerText = englishUs.applyFont;
+    cancleBtn.innerText = englishUs.cancleFont;
     englishUsOption.selected = true
     document.cookie = `language=englishUs; expires=Tue, 19 Jan 2038 03:14:07 GMT; SameSite=none; Secure`;
 }
