@@ -163,7 +163,16 @@ body{
 
 .side-menu-cancle,.side-menu-apply{
     text-decoration:none;
-    color:rgb(63, 63, 63);
+    color:#3f3f3f;
     margin: 0px 5px; 
     cursor: pointer;
+    padding: 1px 5px;
+    background: #d1d1d1;
+    border-radius: 3px;
+    transition-duration: 300ms
 }
+.side-menu-cancle:hover,.side-menu-apply:hover{
+    background: #e0e0e0;
+    transition-duration: 300ms;
+}
+

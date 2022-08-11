@@ -68,7 +68,6 @@ function chineseTraditionalSet(){
     backgroundTitlefont.innerText = chineseTraditional.backgroundTitle;
     selectIimageTitlefont.innerText = chineseTraditional.selectIimageTitle;
     languageTitlefont.innerText = chineseTraditional.languageTitle;
-    fontFamilyTitlefont.innerText = chineseTraditional.fontFamilyTitle;
     searchEngineTitlefont.innerText = chineseTraditional.searchEngineTitle;
     serachFont.placeholder = chineseTraditional.searchFont;
     applyBtn.innerText = chineseTraditional.applyFont;
@@ -81,7 +80,6 @@ function japaneseSet(){
     backgroundTitlefont.innerText = japanese.backgroundTitle;
     selectIimageTitlefont.innerText = japanese.selectIimageTitle;
     languageTitlefont.innerText = japanese.languageTitle;
-    fontFamilyTitlefont.innerText = japanese.fontFamilyTitle;
     searchEngineTitlefont.innerText = japanese.searchEngineTitle;
     serachFont.placeholder = japanese.searchFont;
     applyBtn.innerText = japanese.applyFont;
@@ -94,7 +92,6 @@ function englishUsSet(){
     backgroundTitlefont.innerText = englishUs.backgroundTitle;
     selectIimageTitlefont.innerText = englishUs.selectIimageTitle;
     languageTitlefont.innerText = englishUs.languageTitle;
-    fontFamilyTitlefont.innerText = englishUs.fontFamilyTitle;
     searchEngineTitlefont.innerText = englishUs.searchEngineTitle;
     serachFont.placeholder = englishUs.searchFont;
     applyBtn.innerText = englishUs.applyFont;
