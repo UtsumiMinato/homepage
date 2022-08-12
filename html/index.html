@@ -14,7 +14,7 @@
 <div class="side-menu">
     <form action="">
     <div id="setting-background-menu">
-        <h2 id="background-title">背景:</h2>
+        <h2 id="background-title"></h2>
 
         <!-- <table class="file-btn-table">
             <input id="background-flie" type="file" name="img" accept="image/*">
@@ -23,13 +23,13 @@
 
         <label class="file-btn-table">
             <input id="background-flie" type="file" name="img" accept="image/*" oninput="changeFileName()">
-            <p id="select-image-title">選擇圖片:</p>
+            <p id="select-image-title"></p>
         </label>
         <p id="background-name">File：</p>
     </div>
     
     <div id="setting-language-menu">
-        <h2 id="language-title">語言:</h2>
+        <h2 id="language-title"></h2>
         <select class="" id="language-select" name="value" onchange="valueChange();">
             <option id="chineseTraditionalSet" value="chineseTraditional">中文</option>
             <option id="englishUsSet" value="englishUs">English</option>
@@ -40,7 +40,7 @@
     
     
     <div id="setting-search-engine-menu">
-        <h2 id='search-engine-title'>搜尋引擎:</h2>
+        <h2 id='search-engine-title'></h2>
         <select class="" id="search-engine-select">
             <option value="google">Google</option>
             <option value="yahoo">Yahoo</option>
@@ -49,8 +49,8 @@
     </div>
     
     <div style="border: 0px; display:flex; justify-content: flex-end;">
-    <a class="side-menu-cancle"  href="#">取消</a>
-    <a class="side-menu-apply"  href="#">套用</a>
+    <a class="side-menu-cancle"  href="#"></a>
+    <a class="side-menu-apply"  href="#"></a>
     </div>
 
     </form>
@@ -59,7 +59,7 @@
 
 
 <body onload="startTime(),config()">
-
+   
     <div class="bg">
         <div id="bg-m"></div>
         <img id="background-image" src=''/>
@@ -71,10 +71,7 @@
             <div id="clock-display" style="display: flex;
             justify-content: center;"><a id="clock"></a></div>
             <div class="search">
-            <input class="search-bar" type="search" name="search" id="search" autocomplete="off" placeholder="使用 Google 搜尋或輸入網址">
-            <!-- Google で検索、または URL を入力します
-                Search with Google or enter address
-                使用 Google 搜尋或輸入網址 -->
+            <input class="search-bar" type="search" name="search" id="search" autocomplete="off" placeholder="">
             <span class="icon-google"><i class="fa-brands fa-google" style="width: 20px;"></i></span>
             <span class="icon"><img id="search-btn" src="..\icon\search-btn.png" style="width:20px;"/></span>
             </div>

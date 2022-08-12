@@ -119,7 +119,7 @@ function languageSet(language){
             
         }
         else{
-            console.log('Language setting error');
+            englishUsSet();
         }
     }
     else{
