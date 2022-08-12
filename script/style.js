@@ -73,7 +73,7 @@ function chineseTraditionalSet(){
     applyBtn.innerText = chineseTraditional.applyFont;
     cancleBtn.innerText = chineseTraditional.cancleFont;
     chineseTraditionalOption.selected=true
-    document.cookie = `language=chineseTraditional; expires=Tue, 19 Jan 2038 03:14:07 GMT; SameSite=none; Secure`;
+    document.cookie = `language=chineseTraditional; expires=Tue, 19 Jan 2038 03:14:07 GMT; SameSite=none;`;
 }
 
 function japaneseSet(){
@@ -85,7 +85,7 @@ function japaneseSet(){
     applyBtn.innerText = japanese.applyFont;
     cancleBtn.innerText = japanese.cancleFont;
     japaneseOption.selected = true
-    document.cookie = `language=japanese; expires=Tue, 19 Jan 2038 03:14:07 GMT; SameSite=none; Secure`;
+    document.cookie = `language=japanese; expires=Tue, 19 Jan 2038 03:14:07 GMT; SameSite=none;`;
 }
 
 function englishUsSet(){
@@ -97,7 +97,7 @@ function englishUsSet(){
     applyBtn.innerText = englishUs.applyFont;
     cancleBtn.innerText = englishUs.cancleFont;
     englishUsOption.selected = true
-    document.cookie = `language=englishUs; expires=Tue, 19 Jan 2038 03:14:07 GMT; SameSite=none; Secure`;
+    document.cookie = `language=englishUs; expires=Tue, 19 Jan 2038 03:14:07 GMT; SameSite=none;`;
 }
 function languageSet(language){
     if(document.cookie.length === 0){
