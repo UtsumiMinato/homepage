@@ -25,7 +25,7 @@ cancleBtn.addEventListener('click',() => {
 function backgroundSet(){
         let backgroundPath = '../background/' + backgroundFile.value.split('\\')[2];
         backgroundImage.src = backgroundPath;
-        document.cookie =  `background=${backgroundPath}; expires=Tue, 19 Jan 2038 03:14:07 GMT; SameSite=none; Secure`;
+        document.cookie =  `background=${backgroundPath}; expires=Tue, 19 Jan 2038 03:14:07 GMT;`;
 }
 
 
