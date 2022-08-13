@@ -73,6 +73,7 @@ function chineseTraditionalSet(){
     applyBtn.innerText = chineseTraditional.applyFont;
     cancleBtn.innerText = chineseTraditional.cancleFont;
     chineseTraditionalOption.selected=true
+    languageSelect = 'chineseTraditional';
     document.cookie = `language=chineseTraditional; expires=Tue, 19 Jan 2038 03:14:07 GMT;`;
 }
 
@@ -85,6 +86,7 @@ function japaneseSet(){
     applyBtn.innerText = japanese.applyFont;
     cancleBtn.innerText = japanese.cancleFont;
     japaneseOption.selected = true
+    languageSelect = 'japanese';
     document.cookie = `language=japanese; expires=Tue, 19 Jan 2038 03:14:07 GMT;`;
 }
 
@@ -97,6 +99,7 @@ function englishUsSet(){
     applyBtn.innerText = englishUs.applyFont;
     cancleBtn.innerText = englishUs.cancleFont;
     englishUsOption.selected = true
+    languageSelect = 'englishUs';
     document.cookie = `language=englishUs; expires=Tue, 19 Jan 2038 03:14:07 GMT;`;
 }
 function languageSet(language){
