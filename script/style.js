@@ -3,6 +3,7 @@ let applyBtn = document.querySelector('.side-menu-apply');
 let cancleBtn = document.querySelector('.side-menu-cancle');
 let backgroundImage = document.querySelector('#background-image');
 let languageSelect = document.querySelector('#language-select').value + '';
+let nowLanguage = getCookie('language');
 
 function valueChange(){
     languageSelect = document.querySelector('#language-select').value + '';
@@ -39,13 +40,13 @@ let serachFont = document.querySelector('#search');
 let chineseTraditionalOption = document.querySelector('#chineseTraditionalSet');
 let japaneseOption = document.querySelector('#japaneseSet');
 let englishUsOption = document.querySelector('#englishUsSet');
-
+let week = '';
 
 
 
 
 class language {
-    constructor(backgroundTitle, selectIimagetitle, languageTitle, fontFamilytitle,searchEnginetitle, searchFont, cancleFont, applyFont){
+    constructor(backgroundTitle, selectIimagetitle, languageTitle, fontFamilytitle,searchEnginetitle, searchFont, cancleFont, applyFont,monthFont, dateFont ,dayFont){
         this.backgroundTitle = backgroundTitle;
         this.selectIimageTitle = selectIimagetitle;
         this.languageTitle = languageTitle;
@@ -54,13 +55,16 @@ class language {
         this.searchFont = searchFont;
         this.cancleFont = cancleFont;
         this.applyFont = applyFont;
+        this.monthFont = monthFont;
+        this.dateFont = dateFont;
+        this.dayFont = dayFont;
     }
     
 }
 
-var chineseTraditional = new language ('背景:', '選擇圖片', '語言:', '字型:', '搜尋引擎:','使用 Google 搜尋或輸入網址','取消','套用')
-var japanese = new language ('壁紙：', '画像を選択', '言語:', 'フォント:', '検索エンジン:', 'Google で検索、または URL を入力します', 'キャンセル', 'アプライ')
-var englishUs = new language ('Wallpaper:', 'Select image', 'Language:', 'Fonts:', 'Search engine:', 'Search with Google or enter address', 'cancle', 'apply')
+var chineseTraditional = new language ('背景:', '選擇圖片', '語言:', '字型:', '搜尋引擎:','使用 Google 搜尋或輸入網址','取消','套用','月','日'['星期日','星期一', '星期二', '星期三', '星期四', '星期五', '星期六'])
+var japanese = new language ('壁紙：', '画像を選択', '言語:', 'フォント:', '検索エンジン:', 'Google で検索、または URL を入力します', 'キャンセル', 'アプライ','月','日', ['日曜日','月曜日','火曜日','水曜日','木曜日','金曜日','土曜日'])
+var englishUs = new language ('Sunday','Wallpaper:', 'Select image', 'Language:', 'Fonts:', 'Search engine:', 'Search with Google or enter address', 'cancle', 'apply',' ','',['Monday', 'Sunday', 'Tuesday', 'Wednesday', 'Thursday','Friday', 'Saturday'])
 
 
 
@@ -72,7 +76,7 @@ function chineseTraditionalSet(){
     serachFont.placeholder = chineseTraditional.searchFont;
     applyBtn.innerText = chineseTraditional.applyFont;
     cancleBtn.innerText = chineseTraditional.cancleFont;
-    chineseTraditionalOption.selected=true
+    chineseTraditionalOption.selected=true;
     languageSelect = 'chineseTraditional';
     document.cookie = `language=chineseTraditional; expires=Tue, 19 Jan 2038 03:14:07 GMT;`;
 }
@@ -85,7 +89,7 @@ function japaneseSet(){
     serachFont.placeholder = japanese.searchFont;
     applyBtn.innerText = japanese.applyFont;
     cancleBtn.innerText = japanese.cancleFont;
-    japaneseOption.selected = true
+    japaneseOption.selected = true;
     languageSelect = 'japanese';
     document.cookie = `language=japanese; expires=Tue, 19 Jan 2038 03:14:07 GMT;`;
 }
@@ -98,7 +102,7 @@ function englishUsSet(){
     serachFont.placeholder = englishUs.searchFont;
     applyBtn.innerText = englishUs.applyFont;
     cancleBtn.innerText = englishUs.cancleFont;
-    englishUsOption.selected = true
+    englishUsOption.selected = true;
     languageSelect = 'englishUs';
     document.cookie = `language=englishUs; expires=Tue, 19 Jan 2038 03:14:07 GMT;`;
 }

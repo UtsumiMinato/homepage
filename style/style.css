@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&family=Noto+Sans+JP:wght@400&family=Noto+Sans+TC:wght@400&family=Rajdhani:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&family=Noto+Sans+JP:wght@400&family=Noto+Sans+TC:wght@300;400&family=Rajdhani:wght@500&display=swap');
 
 *{box-sizing: border-box; margin: 0; padding:0;}
 
@@ -103,7 +103,7 @@ body{
 }
 
 #clock{
-    height: 100px;
+    height: 90px;
     margin-top: 15%;
     font-family:'Rajdhani', sans-serif;
     font-size: 450%;
@@ -119,6 +119,23 @@ body{
 #clock:hover{
     font-size: 500%;
     transition-duration: 300ms;
+}
+
+.line{
+    border-top: #e7e7e7 solid 1px;
+    width: 200px;
+    margin: 0px auto;
+}
+
+.date{
+    display: flex;
+    justify-content: center;
+    padding: 5px;
+    color: aliceblue;
+    text-shadow: 0.05em 0.05em 0.1em rgb(133, 133, 133);
+    font-size: 18px;
+    font-family: 'Noto Sans JP', sans-serif;
+    
 }
 
 .search{

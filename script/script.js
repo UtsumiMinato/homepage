@@ -3,9 +3,13 @@ function startTime(){
     let hh = today.getHours();
     let mm = today.getMinutes();
     let ss = today.getSeconds();
+    let mon = today.getMonth();
+    let date = today.getDate();
+    let day = today.getDay();
     mm = checkTime(mm);
     ss = checkTime(ss);
     document.getElementById('clock').innerHTML = hh + ":" + mm + ":" + ss;
+    document.querySelector('.date').innerHTML = mon+1 + window[nowLanguage].monthFont + date + window[nowLanguage].dateFont + '　' + window[nowLanguage].dayFont[day];
     let timeoutId = setTimeout(startTime, 500);
   }
   
