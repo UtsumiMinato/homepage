@@ -75,6 +75,9 @@ searchBar.addEventListener('keydown',function(e){
 })//如果按下Enter就執行sendWords funsction
 
 
+let searchEngine = document.querySelector('#search-engine-select').value;
+
+
 function sendWords(){
   if (searchBar.value.indexOf("www.") != -1) {
     let searchUrl = "https://" + searchBar.value
@@ -88,8 +91,20 @@ function sendWords(){
     searchBar.value = ''
     
   }
-  else{
+  else if (searchEngine === 'google'){
     let searchUrl = "https://www.google.com/search?q=" + searchBar.value
+    document.location.href=searchUrl;
+    searchBar.value = ''
+    
+  }
+  else if (searchEngine === 'yahoo'){
+    let searchUrl = "https://tw.search.yahoo.com/search?p=" + searchBar.value
+    document.location.href=searchUrl;
+    searchBar.value = ''
+    
+  }
+  else if (searchEngine === 'bing'){
+    let searchUrl = "https://www.bing.com/search?q=" + searchBar.value
     document.location.href=searchUrl;
     searchBar.value = ''
     

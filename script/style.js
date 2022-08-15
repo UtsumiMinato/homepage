@@ -7,6 +7,7 @@ let nowLanguage = getCookie('language');
 
 function valueChange(){
     languageSelect = document.querySelector('#language-select').value + '';
+    searchEngine = document.querySelector('#search-engine-select').value;
 }
 
 
