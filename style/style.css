@@ -140,7 +140,9 @@ body{
 
 .search{
     display: flex;
-    margin: 5% 10% 0 10%;
+    top: 30px;
+    width: 640px;
+    margin: 0 10% 0 10%;
     position: relative;
     justify-content: center;
    }
