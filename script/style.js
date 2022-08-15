@@ -3,7 +3,7 @@ let applyBtn = document.querySelector('.side-menu-apply');
 let cancleBtn = document.querySelector('.side-menu-cancle');
 let backgroundImage = document.querySelector('#background-image');
 let languageSelect = document.querySelector('#language-select').value + '';
-let nowLanguage = getCookie('language');
+let nowLanguage = languageSelect;
 
 function valueChange(){
     languageSelect = document.querySelector('#language-select').value + '';
@@ -41,7 +41,6 @@ let serachFont = document.querySelector('#search');
 let chineseTraditionalOption = document.querySelector('#chineseTraditionalSet');
 let japaneseOption = document.querySelector('#japaneseSet');
 let englishUsOption = document.querySelector('#englishUsSet');
-let week = '';
 
 
 
@@ -149,7 +148,7 @@ function languageSet(language){
     }
 }
 
-let backgroundName = document.querySelector('#background-name')
+let backgroundName = document.querySelector('#background-name');
 
 
 function changeFileName(){
