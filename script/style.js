@@ -155,11 +155,58 @@ function changeFileName(){
     document.querySelector('#background-name').innerText = 'File：' + backgroundFile.value.split('\\')[2];
 }
 
+let siteMenu = document.querySelector('#site-menu');
+let siteMenuSwitch = document.querySelector('#site-menu-switch').checked;
+
+function settingSiteMenu(){
+    siteMenuSwitch = document.querySelector('#site-menu-switch').checked;
+    if(siteMenuSwitch === true){
+        siteMenu.style.display = 'flex';
+        document.cookie = `siteMenu=true; expires=Tue, 19 Jan 2038 03:14:07 GMT;`;
+    }
+    else if (siteMenuSwitch === false){
+        siteMenu.style.display = 'none';
+        document.cookie = `siteMenu=false; expires=Tue, 19 Jan 2038 03:14:07 GMT;`;
+    }
+}
+
+function siteMenuConfig(siteMenuStatus){
+    if (siteMenuStatus === 'true'){
+        siteMenu.style.display = 'flex';
+        document.cookie = `siteMenu=true; expires=Tue, 19 Jan 2038 03:14:07 GMT;`;
+        document.querySelector('#site-menu-switch').checked = true;
+    }
+    else if (siteMenuStatus === 'false'){
+        siteMenu.style.display = 'none';
+        document.cookie = `siteMenu=false; expires=Tue, 19 Jan 2038 03:14:07 GMT;`;
+    }
+}
+
+
+
+function setSite(num){
+    document.querySelector(`#site-name-show-${num}`).innerText = document.querySelector(`#site-name-${num}`).value;
+    document.querySelector(`#site-url-${num}`).href = document.querySelector(`#site-url-input-${num}`).value;
+    document.cookie = `sitename${num} = ${document.querySelector(`#site-name-${num}`).value}; expires=Tue, 19 Jan 2038 03:14:07 GMT;`;
+    document.cookie = `siteurl${num} = ${document.querySelector(`#site-url-input-${num}`).value}; expires=Tue, 19 Jan 2038 03:14:07 GMT;`;
+}
+
+
+
+
 
 function config(){
     languageSet(window.navigator.language);
     if (document.cookie.length > 0){
         languageSet(getCookie('language'));
+        siteMenuConfig(getCookie('siteMenu'));
+    }
+
+    for (i = 1; i<5; i++){
+        if (getCookie(`sitename${i}`) != undefined){
+            document.querySelector(`#site-name-show-${i}`).innerText = getCookie(`sitename${i}`);
+            document.querySelector(`#site-url-${i}`).href = getCookie(`siteurl${i}`);
+        }
     }
     backgroundImage.src = getCookie('background');
 }

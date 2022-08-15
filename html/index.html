@@ -16,10 +16,6 @@
     <div id="setting-background-menu">
         <h2 id="background-title"></h2>
 
-        <!-- <table class="file-btn-table">
-            <input id="background-flie" type="file" name="img" accept="image/*">
-            <i id="select-image-title">選擇圖片:</i>
-        </table> -->
 
         <label class="file-btn-table">
             <input id="background-flie" type="file" name="img" accept="image/*" oninput="changeFileName()">
@@ -47,6 +43,35 @@
             <option value="bing">bing</option>
         </select>
     </div>
+
+    <div>
+        <h2 id="link-menu-litle">網站選單:</h2>
+        <p style="display:inline;">網站選單</p>
+        <label>
+            <input type="checkbox" name="" id="site-menu-switch" class="checkbox" onchange="settingSiteMenu()">
+            <span class="btn-box">
+              <span class="btn"></span>      
+            </span>
+        </label>
+        <h3>網站連結設定:</h3>
+        <p>1:</p>
+        <input id="site-name-1" class="site-name" type="text" placeholder="網站名稱:"/>
+        <input id="site-url-input-1" class="site-url" type="text" placeholder="URL:"/>
+        <a id="site1-edit" class="site-edit" onclick="setSite(1)">更新</a>
+        <p>2:</p>
+        <input id="site-name-2" class="site-name" type="text"placeholder="網站名稱:"/>
+        <input id="site-url-input-2" class="site-url" type="text"placeholder="URL:"/>
+        <a id="site2-edit" class="site-edit" onclick="setSite(2)">更新</a>
+        <p>3:</p>
+        <input id="site-name-3" class="site-name" type="text" placeholder="網站名稱:"/>
+        <input id="site-url-input-3" class="site-url" type="text" placeholder="URL:"/>
+        <a id="site3-edit" class="site-edit" onclick="setSite(3)">更新</a>
+        <p>4:</p>
+        <input id="site-name-4" class="site-name" type="text"placeholder="網站名稱:"/>
+        <input id="site-url-input-4" class="site-url" type="text"placeholder="URL:"/>
+        <a id="site4-edit" class="site-edit" onclick="setSite(4)">更新</a>
+    </div>
+
     
     <div style="border: 0px; display:flex; justify-content: flex-end;">
     <a class="side-menu-cancle"></a>
@@ -80,6 +105,26 @@
             <span class="icon-google"><i class="fa-brands fa-google" style="width: 20px;"></i></span>
             <span class="icon"><img id="search-btn" src="..\icon\search-btn.png" style="width:20px;"/></span>
             </div>
+
+            <div id="site-menu">
+                <ul style="width:600px; display: flex; justify-content: center;">
+                    <li class="site-link" style="display: inline-block;">
+                        <div class="site-block" id="site-1"><a id="site-url-1" class="site-btn" href="#"><span id="site-name-show-1" class="site-title" ></span></a></div>
+                    </li>
+                    <li class="site-link" style="display: inline-block;">
+                        <div class="site-block" id="site-2"><a id="site-url-2" class="site-btn" href="#"><span id="site-name-show-2" class="site-title" ></span></a></div>
+                    </li>
+                    <li class="site-link" style="display: inline-block;">
+                        <div class="site-block" id="site-3"><a id="site-url-3" class="site-btn" href="#"><span id="site-name-show-3" class="site-title" ></span></a></div>
+                    </li>
+                    <li class="site-link" style="display: inline-block;">
+                        <div class="site-block" id="site-4"><a id="site-url-4" class="site-btn" href="#"><span id="site-name-show-4" class="site-title" ></span></a></div>
+                    </li>
+                    
+                </ul>
+                
+            </div>
+
 
         </div>
     <script src="../script/script.js"></script>
