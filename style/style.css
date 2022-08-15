@@ -32,7 +32,7 @@ body{
     display: flex;
     flex-direction: column;
     position: absolute;
-    transform: translateX(-100%);
+    transform: translateX(-103%);
     box-shadow: 5px 0px 5px rgba(85, 85, 85, 0.336);
     transition: .5s;
     z-index: 2;

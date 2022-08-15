@@ -19,7 +19,7 @@ applyBtn.addEventListener('click',() => {
 })
 
 cancleBtn.addEventListener('click',() => {
-    sideMenu.style.transform="translateX(-100%)"; 
+    sideMenu.style.transform="translateX(-103%)"; 
     clockClickNum +=1;
 })
 

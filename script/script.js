@@ -25,7 +25,7 @@ clockBtn.addEventListener('click',function(){
     clockClickNum +=1;
   }  
   else if(clockClickNum % 2 != 0){
-    sideMenu.style.transform="translateX(-100%)";
+    sideMenu.style.transform="translateX(-103%)";
     clockClickNum +=1;
   }
 })
