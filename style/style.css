@@ -237,113 +237,117 @@ body{
     border-radius:3px;
     background-color: #ccc;
     box-shadow: 0px 3px 0px rgba(0,0,0,.13) inset;
-  }
-  .btn-box .btn {
-    display:inline-block;
-    width: 20px;
-    height: 20px;
-    border-radius:3px;
-    background-color: #fff;
-    margin-left: 0;
-    transition: .2s;
-    box-shadow:1px 2px 5px rgba(0,0,0,.3);
-  }
-  .checkbox {
-    position:absolute;
-    opacity:0;
-  }
-  .checkbox:checked + .btn-box {
-    background-color: rgb(121, 228, 121);
-  }
-  .checkbox:checked + .btn-box .btn {
-    margin-left: 20px;
-  }
+}
+.btn-box .btn {
+  display:inline-block;
+  width: 20px;
+  height: 20px;
+  border-radius:3px;
+  background-color: #fff;
+  margin-left: 0;
+  transition: .2s;
+  box-shadow:1px 2px 5px rgba(0,0,0,.3);
+}
+.checkbox {
+  position:absolute;
+  opacity:0;
+}
+.checkbox:checked + .btn-box {
+  background-color: rgb(121, 228, 121);
+}
+.checkbox:checked + .btn-box .btn {
+  margin-left: 20px;
+}
 
-  #site-menu{
-    display: none;
-    justify-content: center;
-    position: relative;
-    flex-wrap: wrap;
-    margin: 0 auto;
-    top: 120px;
-    width: 610px;
-    height: 75px;
-    border-radius: 10px;
-    background-color: rgba(255, 255, 255, 0.418);
-  }
+#site-menu{
+  display: none;
+  justify-content: center;
+  position: relative;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  top: 120px;
+  width: 610px;
+  height: 75px;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.418);
+}
 
-  .stie-link{
-    display: flex;
-    flex-wrap: wrap;
-  }
+.stie-link{
+  display: flex;
+  flex-wrap: wrap;
+}
 
-  .site-block{
-    background-color: #949494af;
-    box-shadow:1px 2px 5px rgba(0,0,0,.15);
-    border-radius: 5px;
-    height: 55px;
-    width:140px;
-    margin: 10px 5px 10px 5px;
-    transition-duration: 300ms;
-    
-  }
-  .site-block:hover{
-    background-color: #acacacaf;
-    box-shadow:1px 2px 5px rgba(255, 255, 255, 0.15);
-    transition-duration: 300ms;
-  }
-
-  .site-btn{
-    display: flex;
-    width: 140px;
-    height: 100%;
-    text-decoration: none;
-    color: #fff;
-    font-family:'Noto Sans TC', sans-serif, 'Noto Sans JP', sans-serif,'Montserrat', sans-serif;
-    font-size: 18px;
-  }
-
-  .site-btn span{
-    margin: auto auto;
-    text-decoration: none;
-  }
-
-  .site-name{
-    width: 100px;
-    background-color: #ffffff;
-    border: 1px solid #d1d1d1;
-    height: 20px;
-    border-radius:2px;
-    padding-left:2px;
-  }
-  .site-url{
-    width: 160px;
-    background-color: #ffffff;
-    border: 1px solid #d1d1d1;
-    height: 20px;
-    border-radius:2px;
-    padding-left:2px;
-  }
-
-
-  .site-name-litle{
-    display: inline;
-  }
-
-  .site-edit{
-    /* position: absolute; */
-    width: 25px;
-    font-size: 14px;
-    background-color: #d1d1d1;
-    padding: 2px;
-    border-radius: 3px;
-    cursor: pointer;
-  }
+.site-block{
+  background-color: #949494af;
+  box-shadow:1px 2px 5px rgba(0,0,0,.15);
+  border-radius: 5px;
+  height: 55px;
+  width:140px;
+  margin: 10px 5px 10px 5px;
+  transition-duration: 300ms;
   
-  .site-edit:hover{
-    font-size: 14px;
-    background-color: #d1d1d1;
-    padding: 2px;
-    border-radius: 3px;
-    
-  }
+}
+.site-block:hover{
+  background-color: #acacacaf;
+  box-shadow:1px 2px 5px rgba(255, 255, 255, 0.15);
+  transition-duration: 300ms;
+}
+
+.site-btn{
+  display: flex;
+  width: 140px;
+  height: 100%;
+  text-decoration: none;
+  color: #fff;
+  font-family:'Noto Sans TC', sans-serif, 'Noto Sans JP', sans-serif,'Montserrat', sans-serif;
+  font-size: 18px;
+}
+
+.site-btn span{
+  margin: auto auto;
+  text-decoration: none;
+}
+
+.site-name{
+  width: 100px;
+  background-color: #ffffff;
+  border: 1px solid #d1d1d1;
+  height: 20px;
+  border-radius:2px;
+  padding-left:2px;
+}
+.site-url{
+  width: 163px;
+  background-color: #ffffff;
+  border: 1px solid #d1d1d1;
+  height: 20px;
+  border-radius:2px;
+  padding-left:2px;
+}
+
+
+.site-name-litle{
+  display: inline;
+}
+
+.site-edit{
+  /* position: absolute; */
+  width: 25px;
+  font-size: 14px;
+  background-color: #d1d1d1;
+  padding: 2px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.site-edit:hover{
+  font-size: 14px;
+  background-color: #d1d1d1;
+  padding: 2px;
+  border-radius: 3px;
+  
+}
+
+.link-menu-switch-title{
+  font-family:'Noto Sans TC', sans-serif, 'Noto Sans JP', sans-serif,'Montserrat', sans-serif;
+}
