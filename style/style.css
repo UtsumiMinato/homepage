@@ -1,5 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&family=Noto+Sans+JP:wght@400&family=Noto+Sans+TC:wght@300;400&family=Play&family=Rajdhani:wght@500&family=Rajdhani:wght@500&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&family=Noto+Sans+JP:wght@400&family=Gugi&family=Noto+Sans+TC:wght@300;400&family=Play&family=Rajdhani:wght@500&family=Rajdhani:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gemunu+Libre:wght@300&family=Gugi&family=Kdam+Thmor+Pro&family=Montserrat:wght@300;400&family=Noto+Sans+JP:wght@300&family=Noto+Sans+TC:wght@300;400&family=Play&display=swap');
 *{box-sizing: border-box; margin: 0; padding:0;}
 
 @keyframes image_animation {
@@ -110,10 +110,10 @@ body{
 #clock{
     height: 90px;
     margin-top: 15%;
-    font-family:'Rajdhani', sans-serif;
-    font-size: 450%;
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 420%;
     color: aliceblue;
-    text-shadow: 0.05em 0.05em 0.1em rgb(133, 133, 133);
+    text-shadow: 0.03em 0.03em 0.1em rgb(133, 133, 133);
     transition-duration: 300ms;
     cursor: pointer;
   }
@@ -122,11 +122,12 @@ body{
 
 
 #clock:hover{
-    font-size: 500%;
+    font-size: 470%;
     transition-duration: 300ms;
 }
 
 .line{
+    display: none;
     border-top: #e7e7e7 solid 1px;
     width: 200px;
     margin: 0px auto;
@@ -309,7 +310,7 @@ body{
 }
 
 .site-name{
-  width: 100px;
+  width: 25%;
   background-color: #ffffff;
   border: 1px solid #d1d1d1;
   height: 20px;
@@ -317,7 +318,7 @@ body{
   padding-left:2px;
 }
 .site-url{
-  width: 163px;
+  width: 60%;
   background-color: #ffffff;
   border: 1px solid #d1d1d1;
   height: 20px;
@@ -331,8 +332,7 @@ body{
 }
 
 .site-edit{
-  /* position: absolute; */
-  width: 25px;
+  width: 10%;
   font-size: 14px;
   background-color: #d1d1d1;
   padding: 2px;

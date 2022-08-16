@@ -8,9 +8,15 @@ function startTime(){
     let day = today.getDay();
     mm = checkTime(mm);
     ss = checkTime(ss);
-    document.getElementById('clock').innerHTML = hh + ":" + mm + ":" + ss;
+    if (hh <= 11){
+      document.getElementById('clock').innerText = 'AM' + ' ' + hh + " " + mm;
+    }
+    else if (hh >= 12){
+      document.getElementById('clock').innerText = 'PM' + ' ' + hh + " " +  mm;
+    }
     document.querySelector('.date').innerHTML = mon+1 + window[nowLanguage].monthFont + date + window[nowLanguage].dateFont + '　' + window[nowLanguage].dayFont[day];
-    let timeoutId = setTimeout(startTime, 500);
+    
+    let timeoutId = setTimeout(startTime, 1000);
   }
   
 
