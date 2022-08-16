@@ -109,7 +109,7 @@ body{
 
 #clock{
     height: 90px;
-    margin-top: 15%;
+    margin-top: 20%;
     font-family: 'Rajdhani', sans-serif;
     font-size: 420%;
     color: aliceblue;
@@ -175,10 +175,15 @@ body{
   }
 
   .icon-google{
+    height: 16px;
     position: absolute;
     right: 95%;
     top: 25%;
     z-index: 1;
+    color: #4f5b66;
+  }
+
+  #search-btn{
     color: #4f5b66;
   }
 
