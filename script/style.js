@@ -5,11 +5,26 @@ let backgroundImage = document.querySelector('#background-image');
 let languageSelect = document.querySelector('#language-select').value + '';
 let nowLanguage = languageSelect;
 
+
 function valueChange(){
     languageSelect = document.querySelector('#language-select').value + '';
     searchEngine = document.querySelector('#search-engine-select').value;
 }
 
+function backgroundSet() {
+    var preview = backgroundImage;
+    var file    = backgroundFile.files[0];
+    var reader  = new FileReader();
+  
+    reader.addEventListener("load", function () {
+        localStorage.setItem('background',`${reader.result}`);
+        preview.src = reader.result;
+    }, false);
+  
+    
+        reader.readAsDataURL(file);
+    
+  }
 
 applyBtn.addEventListener('click',() => {
     if (backgroundFile.value.length != 0){
@@ -24,11 +39,6 @@ cancleBtn.addEventListener('click',() => {
 })
 
 
-function backgroundSet(){
-        let backgroundPath = '../background/' + backgroundFile.value.split('\\')[2];
-        backgroundImage.src = backgroundPath;
-        document.cookie =  `background=${backgroundPath}; expires=Tue, 19 Jan 2038 03:14:07 GMT;`;
-}
 
 
 //font setting
@@ -208,7 +218,11 @@ function config(){
             document.querySelector(`#site-url-${i}`).href = getCookie(`siteurl${i}`);
         }
     }
-    backgroundImage.src = getCookie('background');
+    
+    if (localStorage.getItem('background') != undefined){
+        backgroundImage.src = localStorage.getItem('background');
+    }
+    
 }
 
 function getCookie(name) {
