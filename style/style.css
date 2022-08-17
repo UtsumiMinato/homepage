@@ -93,6 +93,14 @@ body{
     z-index: 30;
 }
 
+.options{
+  /* border-bottom: 0px; 設於html */
+  display: flex; 
+  justify-content:space-between; 
+  align-items: center; 
+  position: relative;
+}
+
 @media screen and (max-width: 1920px) {
     img.bg {
         left: 50%;

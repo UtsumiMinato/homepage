@@ -16,13 +16,14 @@
     <div id="setting-background-menu">
         <h2 id="background-title"></h2>
 
-
-        <label class="file-btn-table">
-            <input id="background-flie" type="file" name="img" accept="image/*" oninput="changeFileName()">
-            <p id="select-image-title"></p>
-        </label>
-        <p id="background-name">File：</p>
-        <div class="options" style="border: 0px; ; display: flex; justify-content:space-between ; align-items: center; position: relative;">
+        <div class="options" style="border-bottom: 0px; justify-content:flex-start;">
+            <label class="file-btn-table" style="height:24px; flex-shrink: 0" >
+                <p id="select-image-title"></p>
+                <input id="background-flie" type="file" name="img" accept="image/*" oninput="changeFileName()">
+            </label>
+            <p id="background-name" style="padding-left: 2%;  ">File：</p>
+        </div>
+        <div class="options" style="border-bottom: 0px;">
             <p id="background-blur-text" style="display: inline; font-size: 16px;"></p>
             <input id="background-blur-value" type="text" style="width: 10%; text-align: center; font-size: 14px; height: 18px; background-color:#d1d1d1; border-radius: 3px; border: 1px solid #8a8a8a;" onchange="valueChange();"/>
         </div>
