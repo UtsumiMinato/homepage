@@ -4,11 +4,13 @@ let cancleBtn = document.querySelector('.side-menu-cancle');
 let backgroundImage = document.querySelector('#background-image');
 let languageSelect = document.querySelector('#language-select').value + '';
 let nowLanguage = languageSelect;
-
+let backgroundBlur = document.querySelector('#bg-m');
+let backgroundBlurValue = document.querySelector('#background-blur-value');
 
 function valueChange(){
     languageSelect = document.querySelector('#language-select').value + '';
     searchEngine = document.querySelector('#search-engine-select').value;
+    backgroundBlurValue = document.querySelector('#background-blur-value');
 }
 
 function backgroundSet() {
@@ -26,10 +28,19 @@ function backgroundSet() {
     
   }
 
+function backgroundBlurSet(){
+    backgroundBlur.style.backdropFilter = `blur(${backgroundBlurValue.value}px)`;
+    document.cookie = `backgroundBlur=${backgroundBlurValue.value}; expires=Tue, 19 Jan 2038 03:14:07 GMT;`;
+}
+
 applyBtn.addEventListener('click',() => {
     if (backgroundFile.value.length != 0){
         backgroundSet();
     }
+    if (getCookie('backgroundBlur') != undefined){
+        backgroundBlurSet()
+    }
+    
     languageSet(languageSelect)
 })
 
@@ -57,7 +68,7 @@ let linkMenuSwitchTitleFont = document.querySelector('#link-menu-switch-title');
 let linkMenuSettingTitleFont = document.querySelector('#link-menu-setting-title');
 let siteName = document.querySelectorAll('.site-name');
 let siteEditBtn = document.querySelectorAll('.site-edit');
-
+let backgroundBlurText = document.querySelector('#background-blur-text');
 // class language {
 //     constructor(backgroundTitle, selectIimagetitle, languageTitle, fontFamilytitle,searchEnginetitle, searchFont, cancleFont, applyFont,monthFont, dateFont ,dayFont ,linkMenuTitle ,linkMenuSettingTitle, siteName, siteSettingBtn){
 //         this.backgroundTitle = backgroundTitle;
@@ -101,6 +112,7 @@ var chineseTraditional = {
         'linkMenuSettingTitle':'捷徑設定:',
         'siteNameFont':'名稱:',
         'siteSettingBtnFont':'確定',
+        'backgroundBlurTextFont':'透明度',
     }
 var japanese = {
         'backgroundTitle':'壁紙：',
@@ -118,6 +130,7 @@ var japanese = {
         'linkMenuSettingTitle': 'ショートカット設定:',
         'siteNameFont':'名前:',
         'siteSettingBtnFont':'設定',
+        'backgroundBlurTextFont':'透明度',
     }
 var englishUs = {
         'backgroundTitle':'Wallpaper:',
@@ -135,6 +148,7 @@ var englishUs = {
         'linkMenuSettingTitle': 'Shortcut setting:',
         'siteNameFont': 'Name:',
         'siteSettingBtnFont':'Done',
+        'backgroundBlurTextFont':'Blur',
     }
 
 
@@ -152,6 +166,7 @@ function chineseTraditionalSet(){
     linkMenuTitleFont.innerText = chineseTraditional.linkMenuTitle;
     linkMenuSwitchTitleFont.innerText = chineseTraditional.linkMenuTitle;
     linkMenuSettingTitleFont.innerText = chineseTraditional.linkMenuSettingTitle;
+    backgroundBlurText.innerText = chineseTraditional.backgroundBlurTextFont;
     for (i=0;i<4;i++){
         siteName[i].placeholder = chineseTraditional.siteNameFont;
     }
@@ -176,6 +191,7 @@ function japaneseSet(){
     linkMenuTitleFont.innerText = japanese.linkMenuTitle;
     linkMenuSwitchTitleFont.innerText = japanese.linkMenuTitle;
     linkMenuSettingTitleFont.innerText = japanese.linkMenuSettingTitle;
+    backgroundBlurText.innerText = japanese.backgroundBlurTextFont;
     for (i=0;i<4;i++){
         siteName[i].placeholder = japanese.siteNameFont;
     }
@@ -199,6 +215,7 @@ function englishUsSet(){
     linkMenuTitleFont.innerText = englishUs.linkMenuTitle;
     linkMenuSwitchTitleFont.innerText = englishUs.linkMenuTitle;
     linkMenuSettingTitleFont.innerText = englishUs.linkMenuSettingTitle;
+    backgroundBlurText.innerText = englishUs.backgroundBlurTextFont;
     for (i=0;i<4;i++){
         siteName[i].placeholder = englishUs.siteNameFont;
     }
@@ -305,6 +322,11 @@ function config(){
             document.querySelector(`#site-name-show-${i}`).innerText = getCookie(`sitename${i}`);
             document.querySelector(`#site-url-${i}`).href = getCookie(`siteurl${i}`);
         }
+    }
+
+    if (getCookie('backgroundBlur') != undefined){
+        backgroundBlur.style.backdropFilter = `Blur(${getCookie('backgroundBlur')}px)`;
+        backgroundBlurValue.value = `${getCookie('backgroundBlur')}`;
     }
     
     if (localStorage.getItem('background') != undefined){
