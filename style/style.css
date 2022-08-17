@@ -84,7 +84,7 @@ body{
 #bg-m{
     width: 100%;
     height:100%;
-    backdrop-filter: blur(1px);
+    backdrop-filter: blur(0.7px);
     position: fixed;
     top: 0;
     left: 0;

@@ -312,24 +312,27 @@ function setSite(num){
 
 function config(){
     languageSet(window.navigator.language);
-    if (document.cookie.length > 0){
+    if (document.cookie.length > 0){//設定語言
         languageSet(getCookie('language'));
         siteMenuConfig(getCookie('siteMenu'));
     }
 
     for (i = 1; i<5; i++){
-        if (getCookie(`sitename${i}`) != undefined){
+        if (getCookie(`sitename${i}`) != undefined){//設定快捷輸入框語言
             document.querySelector(`#site-name-show-${i}`).innerText = getCookie(`sitename${i}`);
             document.querySelector(`#site-url-${i}`).href = getCookie(`siteurl${i}`);
         }
     }
 
-    if (getCookie('backgroundBlur') != undefined){
+    if (getCookie('backgroundBlur') != undefined){//設定背景透明度
         backgroundBlur.style.backdropFilter = `Blur(${getCookie('backgroundBlur')}px)`;
         backgroundBlurValue.value = `${getCookie('backgroundBlur')}`;
     }
+    else if(getCookie('backgroundBlur') != undefined === false){
+        backgroundBlurValue.value = `0.7`;
+    }
     
-    if (localStorage.getItem('background') != undefined){
+    if (localStorage.getItem('background') != undefined){//設定背景圖片
         backgroundImage.src = localStorage.getItem('background');
     }
     else {
