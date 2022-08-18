@@ -272,15 +272,21 @@ function changeFileName(){
 
 let siteMenu = document.querySelector('#site-menu');
 let siteMenuSwitch = document.querySelector('#site-menu-switch').checked;
+let linkSettingMenu = document.querySelector('#link-setting-menu');
+
 
 function settingSiteMenu(){
     siteMenuSwitch = document.querySelector('#site-menu-switch').checked;
     if(siteMenuSwitch === true){
         siteMenu.style.display = 'flex';
+        linkSettingMenu.style.display = '';
+        document.cookie = `linkSettingMenu=''; expires=Tue, 19 Jan 2038 03:14:07 GMT;`;
         document.cookie = `siteMenu=true; expires=Tue, 19 Jan 2038 03:14:07 GMT;`;
     }
     else if (siteMenuSwitch === false){
         siteMenu.style.display = 'none';
+        linkSettingMenu.style.display = 'none';
+        document.cookie = `linkSettingMenu=none; expires=Tue, 19 Jan 2038 03:14:07 GMT;`;
         document.cookie = `siteMenu=false; expires=Tue, 19 Jan 2038 03:14:07 GMT;`;
     }
 }
@@ -322,6 +328,13 @@ function config(){
             document.querySelector(`#site-name-show-${i}`).innerText = getCookie(`sitename${i}`);
             document.querySelector(`#site-url-${i}`).href = getCookie(`siteurl${i}`);
         }
+    }
+
+    if (getCookie('linkSettingMenu') != undefined){
+        linkSettingMenu.style.display = getCookie('linkSettingMenu');
+    }
+    else if (getCookie('linkSettingMenu') != undefined === false){
+        linkSettingMenu.style.display = 'none';
     }
 
     if (getCookie('backgroundBlur') != undefined){//設定背景透明度
