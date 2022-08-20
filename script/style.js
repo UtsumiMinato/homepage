@@ -112,7 +112,7 @@ var chineseTraditional = {
         'linkMenuSettingTitle':'捷徑設定:',
         'siteNameFont':'名稱:',
         'siteSettingBtnFont':'確定',
-        'backgroundBlurTextFont':'透明度',
+        'backgroundBlurTextFont':'模糊度',
     }
 var japanese = {
         'backgroundTitle':'壁紙：',
@@ -130,7 +130,7 @@ var japanese = {
         'linkMenuSettingTitle': 'ショートカット設定:',
         'siteNameFont':'名前:',
         'siteSettingBtnFont':'設定',
-        'backgroundBlurTextFont':'透明度',
+        'backgroundBlurTextFont':'ぼかし',
     }
 var englishUs = {
         'backgroundTitle':'Wallpaper:',
