@@ -37,9 +37,9 @@ applyBtn.addEventListener('click',() => {
     if (backgroundFile.value.length != 0){
         backgroundSet();
     }
-    if (getCookie('backgroundBlur') != undefined){
-        backgroundBlurSet()
-    }
+    
+    backgroundBlurSet()
+
     
     languageSet(languageSelect)
 })
