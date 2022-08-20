@@ -30,7 +30,7 @@ function backgroundSet() {
 
 function backgroundBlurSet(){
     backgroundBlur.style.backdropFilter = `blur(${backgroundBlurValue.value}px)`;
-    document.cookie = `backgroundBlur=${backgroundBlurValue.value}; expires=Tue, 19 Jan 2038 03:14:07 GMT;`;
+    document.cookie = `backgroundBlur=${backgroundBlurValue.value}; expires=Tue, 19 Jan 2038 03:14:07 GMT; SameSite=none; Secure`;
 }
 
 applyBtn.addEventListener('click',() => {
@@ -174,7 +174,7 @@ function chineseTraditionalSet(){
         siteEditBtn[i].innerText = chineseTraditional.siteSettingBtnFont;
     }
     
-    document.cookie = `language=chineseTraditional; expires=Tue, 19 Jan 2038 03:14:07 GMT;`;
+    document.cookie = `language=chineseTraditional; expires=Tue, 19 Jan 2038 03:14:07 GMT; SameSite=none; Secure`;
 }
 
 function japaneseSet(){
@@ -198,7 +198,7 @@ function japaneseSet(){
     for (i=0;i<4;i++){
         siteEditBtn[i].innerText = japanese.siteSettingBtnFont;
     }
-    document.cookie = `language=japanese; expires=Tue, 19 Jan 2038 03:14:07 GMT;`;
+    document.cookie = `language=japanese; expires=Tue, 19 Jan 2038 03:14:07 GMT; SameSite=none; Secure`;
 }
 
 function englishUsSet(){
@@ -222,7 +222,7 @@ function englishUsSet(){
     for (i=0;i<4;i++){
         siteEditBtn[i].innerText = englishUs.siteSettingBtnFont;
     }
-    document.cookie = `language=englishUs; expires=Tue, 19 Jan 2038 03:14:07 GMT;`;
+    document.cookie = `language=englishUs; expires=Tue, 19 Jan 2038 03:14:07 GMT; SameSite=none; Secure`;
 }
 function languageSet(language){
     if(document.cookie.length === 0){
@@ -280,26 +280,26 @@ function settingSiteMenu(){
     if(siteMenuSwitch === true){
         siteMenu.style.display = 'flex';
         linkSettingMenu.style.display = '';
-        document.cookie = `linkSettingMenu=''; expires=Tue, 19 Jan 2038 03:14:07 GMT;`;
-        document.cookie = `siteMenu=true; expires=Tue, 19 Jan 2038 03:14:07 GMT;`;
+        document.cookie = `linkSettingMenu=''; expires=Tue, 19 Jan 2038 03:14:07 GMT; SameSite=none; Secure`;
+        document.cookie = `siteMenu=true; expires=Tue, 19 Jan 2038 03:14:07 GMT; SameSite=none; Secure`;
     }
     else if (siteMenuSwitch === false){
         siteMenu.style.display = 'none';
         linkSettingMenu.style.display = 'none';
-        document.cookie = `linkSettingMenu=none; expires=Tue, 19 Jan 2038 03:14:07 GMT;`;
-        document.cookie = `siteMenu=false; expires=Tue, 19 Jan 2038 03:14:07 GMT;`;
+        document.cookie = `linkSettingMenu=none; expires=Tue, 19 Jan 2038 03:14:07 GMT; SameSite=none; Secure`;
+        document.cookie = `siteMenu=false; expires=Tue, 19 Jan 2038 03:14:07 GMT; SameSite=none; Secure`;
     }
 }
 
 function siteMenuConfig(siteMenuStatus){
     if (siteMenuStatus === 'true'){
         siteMenu.style.display = 'flex';
-        document.cookie = `siteMenu=true; expires=Tue, 19 Jan 2038 03:14:07 GMT;`;
+        document.cookie = `siteMenu=true; expires=Tue, 19 Jan 2038 03:14:07 GMT; SameSite=none; Secure`;
         document.querySelector('#site-menu-switch').checked = true;
     }
     else if (siteMenuStatus === 'false'){
         siteMenu.style.display = 'none';
-        document.cookie = `siteMenu=false; expires=Tue, 19 Jan 2038 03:14:07 GMT;`;
+        document.cookie = `siteMenu=false; expires=Tue, 19 Jan 2038 03:14:07 GMT; SameSite=none; Secure`;
     }
 }
 
@@ -308,8 +308,8 @@ function siteMenuConfig(siteMenuStatus){
 function setSite(num){
     document.querySelector(`#site-name-show-${num}`).innerText = document.querySelector(`#site-name-${num}`).value;
     document.querySelector(`#site-url-${num}`).href = document.querySelector(`#site-url-input-${num}`).value;
-    document.cookie = `sitename${num} = ${document.querySelector(`#site-name-${num}`).value}; expires=Tue, 19 Jan 2038 03:14:07 GMT;`;
-    document.cookie = `siteurl${num} = ${document.querySelector(`#site-url-input-${num}`).value}; expires=Tue, 19 Jan 2038 03:14:07 GMT;`;
+    document.cookie = `sitename${num} = ${document.querySelector(`#site-name-${num}`).value}; expires=Tue, 19 Jan 2038 03:14:07 GMT; SameSite=none; Secure`;
+    document.cookie = `siteurl${num} = ${document.querySelector(`#site-url-input-${num}`).value}; expires=Tue, 19 Jan 2038 03:14:07 GMT; SameSite=none; Secure`;
 }
 
 
