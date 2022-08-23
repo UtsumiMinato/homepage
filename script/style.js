@@ -6,6 +6,7 @@ let languageSelect = document.querySelector('#language-select').value + '';
 let nowLanguage = languageSelect;
 let backgroundBlur = document.querySelector('#bg-m');
 let backgroundBlurValue = document.querySelector('#background-blur-value');
+let backgroundSettingResetBtn = document.querySelector('#background-setting-reset-btn');
 
 function valueChange(){
     languageSelect = document.querySelector('#language-select').value + '';
@@ -49,7 +50,12 @@ cancleBtn.addEventListener('click',() => {
     clockClickNum +=1;
 })
 
-
+backgroundSettingResetBtn.addEventListener('click',()=>{
+    document.cookie = `backgroundBlur=0.7; expires=Tue, 19 Jan 2038 03:14:07 GMT; SameSite=none; Secure`;
+    backgroundBlur.style.backdropFilter = `blur(0.7px)`;
+    backgroundImage.src = './/background//andre-benz-cXU6tNxhub0-unsplash-1080.jpg';
+    localStorage.removeItem('background');
+})
 
 
 
