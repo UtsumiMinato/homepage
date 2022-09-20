@@ -355,7 +355,7 @@ function config(){
         backgroundImage.src = localStorage.getItem('background');
     }
     else {
-        backgroundImage.src = './/background//andre-benz-cXU6tNxhub0-unsplash-1080.jpg';
+        backgroundImage.src = './/background//tianshu-liu-aqZ3UAjs_M4-unsplash';
     }
 
     
