@@ -355,7 +355,7 @@ function config(){
         backgroundImage.src = localStorage.getItem('background');
     }
     else {
-        backgroundImage.src = './/background//tianshu-liu-aqZ3UAjs_M4-unsplash';
+        backgroundImage.src = './/background//tianshu-liu-aqZ3UAjs_M4-unsplash.jpg';
     }
 
     
