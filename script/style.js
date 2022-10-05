@@ -3,7 +3,7 @@ let applyBtn = document.querySelector('.side-menu-apply');
 let cancleBtn = document.querySelector('.side-menu-cancle');
 let backgroundImage = document.querySelector('#background-image');
 let languageSelect = document.querySelector('#language-select').value + '';
-let nowLanguage = languageSelect;
+let nowLanguage = getCookie('language');
 let backgroundBlur = document.querySelector('#bg-m');
 let backgroundBlurValue = document.querySelector('#background-blur-value');
 let backgroundSettingResetBtn = document.querySelector('#background-setting-reset-btn');
@@ -75,6 +75,7 @@ let linkMenuSettingTitleFont = document.querySelector('#link-menu-setting-title'
 let siteName = document.querySelectorAll('.site-name');
 let siteEditBtn = document.querySelectorAll('.site-edit');
 let backgroundBlurText = document.querySelector('#background-blur-text');
+let resetBtn = document.querySelector('#background-setting-reset-btn');
 // class language {
 //     constructor(backgroundTitle, selectIimagetitle, languageTitle, fontFamilytitle,searchEnginetitle, searchFont, cancleFont, applyFont,monthFont, dateFont ,dayFont ,linkMenuTitle ,linkMenuSettingTitle, siteName, siteSettingBtn){
 //         this.backgroundTitle = backgroundTitle;
@@ -119,6 +120,7 @@ var chineseTraditional = {
         'siteNameFont':'名稱:',
         'siteSettingBtnFont':'確定',
         'backgroundBlurTextFont':'模糊度',
+        'resetFont':'重設',
     }
 var japanese = {
         'backgroundTitle':'壁紙：',
@@ -137,6 +139,7 @@ var japanese = {
         'siteNameFont':'名前:',
         'siteSettingBtnFont':'設定',
         'backgroundBlurTextFont':'ぼかし',
+        'resetFont':'リセット',
     }
 var englishUs = {
         'backgroundTitle':'Wallpaper:',
@@ -155,6 +158,7 @@ var englishUs = {
         'siteNameFont': 'Name:',
         'siteSettingBtnFont':'Done',
         'backgroundBlurTextFont':'Blur',
+        'resetFont':'Reset',
     }
 
 
@@ -173,6 +177,7 @@ function chineseTraditionalSet(){
     linkMenuSwitchTitleFont.innerText = chineseTraditional.linkMenuTitle;
     linkMenuSettingTitleFont.innerText = chineseTraditional.linkMenuSettingTitle;
     backgroundBlurText.innerText = chineseTraditional.backgroundBlurTextFont;
+    resetBtn.innerText = chineseTraditional.resetFont;
     for (i=0;i<4;i++){
         siteName[i].placeholder = chineseTraditional.siteNameFont;
     }
@@ -198,6 +203,7 @@ function japaneseSet(){
     linkMenuSwitchTitleFont.innerText = japanese.linkMenuTitle;
     linkMenuSettingTitleFont.innerText = japanese.linkMenuSettingTitle;
     backgroundBlurText.innerText = japanese.backgroundBlurTextFont;
+    resetBtn.innerText = japanese.resetFont;
     for (i=0;i<4;i++){
         siteName[i].placeholder = japanese.siteNameFont;
     }
@@ -222,6 +228,7 @@ function englishUsSet(){
     linkMenuSwitchTitleFont.innerText = englishUs.linkMenuTitle;
     linkMenuSettingTitleFont.innerText = englishUs.linkMenuSettingTitle;
     backgroundBlurText.innerText = englishUs.backgroundBlurTextFont;
+    resetBtn.innerText = englishUs.resetFont;
     for (i=0;i<4;i++){
         siteName[i].placeholder = englishUs.siteNameFont;
     }
