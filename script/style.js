@@ -3,7 +3,7 @@ let applyBtn = document.querySelector('.side-menu-apply');
 let cancleBtn = document.querySelector('.side-menu-cancle');
 let backgroundImage = document.querySelector('#background-image');
 let languageSelect = document.querySelector('#language-select').value + '';
-let nowLanguage = getCookie('language');
+let nowLanguage = languageSelect;
 let backgroundBlur = document.querySelector('#bg-m');
 let backgroundBlurValue = document.querySelector('#background-blur-value');
 let backgroundSettingResetBtn = document.querySelector('#background-setting-reset-btn');
@@ -239,39 +239,44 @@ function englishUsSet(){
 }
 function languageSet(language){
     if(document.cookie.length === 0){
-        
-        if(language === 'zh-TW'){
-            console.log('自動辨識中文');
-            chineseTraditionalSet();
+
+        switch (language){
+            case 'zh-TW':
+                console.log('自動辨識中文');
+                chineseTraditionalSet();
+                break;
+
+            case 'ja':
+                console.log('自動辨識ja');
+                japaneseSet();
+                break;
+
+            case 'en':
+                console.log('自動辨識en');
+                englishUsSet();
             
+            default:
+                englishUsSet();
         }
-        else if (language === 'ja'){
-            console.log('自動辨識ja');
-            japaneseSet();
-            
-            
-        }
-        else if (language === 'en'){
-            console.log('自動辨識en');
-            englishUsSet();
-            
-        }
-        else{
-            englishUsSet();
-        }
+
     }
     else{
-        if (language === 'chineseTraditional'){
-            chineseTraditionalSet();
-        }
-        else if(language === 'japanese'){
-            japaneseSet();
-        }
-        else if(language === 'englishUs'){
-            englishUsSet();
-        }
-        else{
-            console.log('Language automatic setting completed');
+        switch(language){
+            case 'chineseTraditional':
+                chineseTraditionalSet();
+            break;
+
+            case 'japanese':
+                japaneseSet();
+            break;
+
+            case 'englishUs':
+                englishUsSet();
+            break;
+
+            default:
+                console.log('Language automatic setting completed');
+
         }
     }
 }
