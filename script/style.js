@@ -137,7 +137,7 @@ var japanese = {
         'linkMenuSettingTitle': 'ショートカット設定:',
         'siteNameFont':'名前:',
         'siteSettingBtnFont':'設定',
-        'backgroundBlurTextFont':'ぼかし',
+        'backgroundBlurTextFont':'ぼかし度',
         'resetFont':'リセット',
     }
 var englishUs = {
