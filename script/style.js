@@ -3,7 +3,6 @@ let applyBtn = document.querySelector('.side-menu-apply');
 let cancleBtn = document.querySelector('.side-menu-cancle');
 let backgroundImage = document.querySelector('#background-image');
 let languageSelect = document.querySelector('#language-select').value + '';
-let nowLanguage = languageSelect;
 let backgroundBlur = document.querySelector('#bg-m');
 let backgroundBlurValue = document.querySelector('#background-blur-value');
 let backgroundSettingResetBtn = document.querySelector('#background-setting-reset-btn');
@@ -172,7 +171,7 @@ function chineseTraditionalSet(){
     cancleBtn.innerText = chineseTraditional.cancleFont;
     chineseTraditionalOption.selected=true; //預選繁體中文
     languageSelect = 'chineseTraditional'; //設定選項為繁體中文
-    nowLanguage = 'chineseTraditional'; 
+    nowLanguage = 'chineseTraditional';
     linkMenuTitleFont.innerText = chineseTraditional.linkMenuTitle;
     linkMenuSwitchTitleFont.innerText = chineseTraditional.linkMenuTitle;
     linkMenuSettingTitleFont.innerText = chineseTraditional.linkMenuSettingTitle;
@@ -335,6 +334,7 @@ function setSite(num){
 
 
 function config(){
+    var nowLanguage = '';
     languageSet(window.navigator.language);
     if (document.cookie.length > 0){//設定語言
         languageSet(getCookie('language'));

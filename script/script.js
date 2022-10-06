@@ -1,23 +1,23 @@
 function startTime(){
-    let today = new Date();
-    let hh = today.getHours();
-    let mm = today.getMinutes();
-    let ss = today.getSeconds();
-    let mon = today.getMonth();
-    let date = today.getDate();
-    let day = today.getDay();
-    mm = checkTime(mm);
-    ss = checkTime(ss);
-    if (hh <= 11){
-      document.getElementById('clock').innerText = 'AM' + ' ' + hh + " " + mm;
-    }
-    else if (hh >= 12){
-      document.getElementById('clock').innerText = 'PM' + ' ' + hh + " " +  mm;
-    }
-    document.querySelector('.date').innerHTML = mon+1 + window[nowLanguage].monthFont + date + window[nowLanguage].dateFont + '　' + window[nowLanguage].dayFont[day];
-    
-    let timeoutId = setTimeout(startTime, 1000);
+  let today = new Date();
+  let hh = today.getHours();
+  let mm = today.getMinutes();
+  let ss = today.getSeconds();
+  let mon = today.getMonth();
+  let date = today.getDate();
+  let day = today.getDay();
+  mm = checkTime(mm);
+  ss = checkTime(ss);
+  if (hh <= 11){
+    document.getElementById('clock').innerText = 'AM' + ' ' + hh + " " + mm;
   }
+  else if (hh >= 12){
+    document.getElementById('clock').innerText = 'PM' + ' ' + hh + " " +  mm;
+  }
+  document.querySelector('.date').innerHTML = mon+1 + window[nowLanguage].monthFont + date + window[nowLanguage].dateFont + '　' + window[nowLanguage].dayFont[day];
+  
+  let timeoutId = setTimeout(startTime, 1000);
+}
   
 
 //sideMenu開關
