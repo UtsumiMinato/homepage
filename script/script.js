@@ -48,13 +48,7 @@ function checkTime(i){
 
 
 let searchBar = document.querySelector('#search')//文字框
-let searchBtn = document.querySelector('#search-btn')//收尋按鈕
 
-searchBtn.addEventListener('click',function(){
-  if(inputState == true && searchBar.value!=''){
-    sendWords()
-  }
-})
 
 
 
@@ -80,6 +74,14 @@ searchBar.addEventListener('keydown',function(e){
   }
 })//如果按下Enter就執行sendWords funsction
 
+let searchBtn = document.querySelector('#search-btn')//收尋按鈕
+
+function searchBtnClick(){
+  console.log('click!!');
+  if(inputState == true && searchBar.value!=''){
+    sendWords()
+  }
+}
 
 let searchEngine = document.querySelector('#search-engine-select').value;
 
