@@ -120,6 +120,7 @@ var chineseTraditional = {
         'siteSettingBtnFont':'確定',
         'backgroundBlurTextFont':'模糊度',
         'resetFont':'重設',
+        'fontColorTitle':'文字顏色：',
     }
 var japanese = {
         'backgroundTitle':'壁紙：',
@@ -139,6 +140,7 @@ var japanese = {
         'siteSettingBtnFont':'設定',
         'backgroundBlurTextFont':'ぼかし度',
         'resetFont':'リセット',
+        'fontColorTitle':'文字顏色：',
     }
 var englishUs = {
         'backgroundTitle':'Wallpaper:',
@@ -158,6 +160,7 @@ var englishUs = {
         'siteSettingBtnFont':'Done',
         'backgroundBlurTextFont':'Blur',
         'resetFont':'Reset',
+        'fontColorTitle':'文字顏色：',
     }
 
 
