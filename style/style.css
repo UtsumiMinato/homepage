@@ -94,7 +94,7 @@ body{
 }
 
 .options{
-  /* border-bottom: 0px; 設於html */
+  border-bottom: 0px;
   display: flex; 
   justify-content:space-between; 
   align-items: center; 
@@ -120,7 +120,7 @@ body{
     margin-top: 20%;
     font-family: 'Rajdhani', sans-serif;
     font-size: 420%;
-    color: aliceblue;
+    color: hsla(0, 0%, 0%, 0);
     text-shadow: 0.03em 0.03em 0.1em rgb(133, 133, 133);
     transition-duration: 300ms;
     cursor: pointer;
@@ -211,7 +211,7 @@ body{
     font-size: 16px;
     font-family: 'Noto Sans TC', sans-serif;
 }
-.side-menu-cancle:hover,.side-menu-apply:hover,#select-image-title,#background-setting-reset-btn:hover{
+.side-menu-cancle:hover,.side-menu-apply:hover,#select-image-title,#background-setting-reset-btn:hover, #colok-color-reset-btn:hover{
     background: #e0e0e0;
     transition-duration: 300ms;
 }
@@ -255,12 +255,8 @@ body{
     box-shadow: 0px 3px 0px rgba(0,0,0,.13) inset;
 }
 
-#file-btn-table{
-  background-color: #3f3f3f;
-}
 
-
-#background-setting-reset-btn{
+#background-setting-reset-btn, #colok-color-reset-btn{
     color: #3f3f3f;
     margin: 0px 5px;
     cursor: pointer;

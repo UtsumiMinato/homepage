@@ -7,6 +7,7 @@ let backgroundBlur = document.querySelector('#bg-m');
 let backgroundBlurValue = document.querySelector('#background-blur-value');
 let backgroundSettingResetBtn = document.querySelector('#background-setting-reset-btn');
 
+
 function valueChange(){
     languageSelect = document.querySelector('#language-select').value + '';
     searchEngine = document.querySelector('#search-engine-select').value;
@@ -38,10 +39,13 @@ applyBtn.addEventListener('click',() => {
         backgroundSet();
     }
     
-    backgroundBlurSet()
+    backgroundBlurSet();
 
     
-    languageSet(languageSelect)
+    languageSet(languageSelect);
+
+    setClockFontColor();
+
 })
 
 cancleBtn.addEventListener('click',() => {
@@ -55,6 +59,8 @@ backgroundSettingResetBtn.addEventListener('click',()=>{
     backgroundImage.src = './/background//andre-benz-cXU6tNxhub0-unsplash-1080.jpg';
     localStorage.removeItem('background');
 })
+
+
 
 
 
@@ -74,31 +80,12 @@ let linkMenuSettingTitleFont = document.querySelector('#link-menu-setting-title'
 let siteName = document.querySelectorAll('.site-name');
 let siteEditBtn = document.querySelectorAll('.site-edit');
 let backgroundBlurText = document.querySelector('#background-blur-text');
-let resetBtn = document.querySelector('#background-setting-reset-btn');
-// class language {
-//     constructor(backgroundTitle, selectIimagetitle, languageTitle, fontFamilytitle,searchEnginetitle, searchFont, cancleFont, applyFont,monthFont, dateFont ,dayFont ,linkMenuTitle ,linkMenuSettingTitle, siteName, siteSettingBtn){
-//         this.backgroundTitle = backgroundTitle;
-//         this.selectIimageTitle = selectIimagetitle;
-//         this.languageTitle = languageTitle;
-//         this.fontFamilyTitle = fontFamilytitle;
-//         this.searchEngineTitle = searchEnginetitle;
-//         this.searchFont = searchFont;
-//         this.cancleFont = cancleFont;
-//         this.applyFont = applyFont;
-//         this.monthFont = monthFont;
-//         this.dateFont = dateFont;
-//         this.dayFont = dayFont;
-//         this.linkMenuTitle = linkMenuTitle;
-//         this.linkMenuSettingTitle = linkMenuSettingTitle;
-//         this.siteName = siteName;
-//         this.siteSettingBtn = siteSettingBtn;
-//     }
-    
-// }
+let backgroundResetBtn = document.querySelector('#background-setting-reset-btn');
+let clockResetBtn = document.querySelector('#colok-color-reset-btn');
 
-// var chineseTraditional = new language ('背景:', '選擇圖片', '語言:', '字型:', '搜尋引擎:','使用 Google 搜尋或輸入網址','取消','套用','月','日',['星期日','星期一', '星期二', '星期三', '星期四', '星期五', '星期六'],'捷徑:','捷徑設定:','捷徑名稱:', '確定');
-// var japanese = new language ('壁紙：', '画像を選択', '言語:', 'フォント:', '検索エンジン:', 'Google で検索、または URL を入力します', 'キャンセル', 'アプライ','月','日', ['日曜日','月曜日','火曜日','水曜日','木曜日','金曜日','土曜日'],'ショートカット:', 'ショートカット設定:','名前:','設定');
-// var englishUs = new language ('Wallpaper:', 'Select image', 'Language:', 'Fonts:', 'Search engine:', 'Search with Google or enter address', 'cancle', 'apply','/','',['Sunday','Monday', 'Tuesday', 'Wednesday', 'Thursday','Friday', 'Saturday'],'Shortcut:', 'Shortcut setting:', 'Name:','Done');
+clockResetBtn.addEventListener('click', ()=>{
+    document.cookie = `ClockColor=#f0f8ff; expires=Tue, 19 Jan 2038 03:14:07 GMT; SameSite=none; Secure`;
+})
 
 
 
@@ -179,7 +166,8 @@ function chineseTraditionalSet(){
     linkMenuSwitchTitleFont.innerText = chineseTraditional.linkMenuTitle;
     linkMenuSettingTitleFont.innerText = chineseTraditional.linkMenuSettingTitle;
     backgroundBlurText.innerText = chineseTraditional.backgroundBlurTextFont;
-    resetBtn.innerText = chineseTraditional.resetFont;
+    backgroundResetBtn.innerText = chineseTraditional.resetFont;
+    clockResetBtn.innerText = chineseTraditional.resetFont;
     for (i=0;i<4;i++){
         siteName[i].placeholder = chineseTraditional.siteNameFont;
     }
@@ -205,7 +193,8 @@ function japaneseSet(){
     linkMenuSwitchTitleFont.innerText = japanese.linkMenuTitle;
     linkMenuSettingTitleFont.innerText = japanese.linkMenuSettingTitle;
     backgroundBlurText.innerText = japanese.backgroundBlurTextFont;
-    resetBtn.innerText = japanese.resetFont;
+    backgroundResetBtn.innerText = japanese.resetFont;
+    clockResetBtn.innerText = japanese.resetFont;
     for (i=0;i<4;i++){
         siteName[i].placeholder = japanese.siteNameFont;
     }
@@ -230,7 +219,9 @@ function englishUsSet(){
     linkMenuSwitchTitleFont.innerText = englishUs.linkMenuTitle;
     linkMenuSettingTitleFont.innerText = englishUs.linkMenuSettingTitle;
     backgroundBlurText.innerText = englishUs.backgroundBlurTextFont;
-    resetBtn.innerText = englishUs.resetFont;
+    backgroundResetBtn.innerText = englishUs.resetFont;
+    clockResetBtn.innerText = englishUs.resetFont;
+
     for (i=0;i<4;i++){
         siteName[i].placeholder = englishUs.siteNameFont;
     }
@@ -332,7 +323,12 @@ function setSite(num){
     document.cookie = `siteurl${num} = ${document.querySelector(`#site-url-input-${num}`).value}; expires=Tue, 19 Jan 2038 03:14:07 GMT; SameSite=none; Secure`;
 }
 
-
+let fontColor = document.querySelector('#font-color-select');
+let clockFont = document.querySelector('#clock');
+let setClockFontColor = ()=>{
+    clockFont.style.color = fontColor.value;
+    document.cookie = `ClockColor=${fontColor.value}; expires=Tue, 19 Jan 2038 03:14:07 GMT; SameSite=none; Secure`;
+}
 
 
 
@@ -344,13 +340,22 @@ function config(){
         siteMenuConfig(getCookie('siteMenu'));
     }
 
+    if(getCookie('ClockColor') != undefined){
+        let color = getCookie('ClockColor');
+        clockFont.style.color = color;
+        fontColor.value = color;
+    }else{
+        fontColor.value = '#f0f8ff';
+        clockFont.style.color = '#f0f8ff';
+    }
+
     for (i = 1; i<5; i++){
         if (getCookie(`sitename${i}`) != undefined){//設定快捷輸入框語言
             document.querySelector(`#site-name-show-${i}`).innerText = getCookie(`sitename${i}`);
             document.querySelector(`#site-url-${i}`).href = getCookie(`siteurl${i}`);
         }
     }
-
+    
     if (getCookie('linkSettingMenu') != undefined){
         linkSettingMenu.style.display = getCookie('linkSettingMenu');
     }
