@@ -55,7 +55,7 @@ cancleBtn.addEventListener('click',() => {
 
 backgroundSettingResetBtn.addEventListener('click',()=>{
     document.cookie = `backgroundBlur=0.7; expires=Tue, 19 Jan 2038 03:14:07 GMT; SameSite=none; Secure`;
-    backgroundBlur.style.backdropFilter = `blur(0.7px)`;
+    backgroundBlur.style.backdropFilter = `blur(0px)`;
     backgroundImage.src = './/background//andre-benz-cXU6tNxhub0-unsplash-1080.jpg';
     localStorage.removeItem('background');
 })
