@@ -340,7 +340,7 @@ function config(){
         siteMenuConfig(getCookie('siteMenu'));
     }
 
-    if(getCookie('ClockColor') != undefined){
+    if(getCookie('ClockColor')){
         let color = getCookie('ClockColor');
         clockFont.style.color = color;
         fontColor.value = color;
@@ -363,15 +363,15 @@ function config(){
         linkSettingMenu.style.display = 'none';
     }
 
-    if (getCookie('backgroundBlur') != undefined){//設定背景透明度
+    if (getCookie('backgroundBlur')){//設定背景透明度
         backgroundBlur.style.backdropFilter = `Blur(${getCookie('backgroundBlur')}px)`;
         backgroundBlurValue.value = `${getCookie('backgroundBlur')}`;
     }
-    else if(getCookie('backgroundBlur') === undefined){
+    else{
         backgroundBlurValue.value = `2.5`;
     }
     
-    if (localStorage.getItem('background') != undefined){//設定背景圖片
+    if (localStorage.getItem('background')){//設定背景圖片
         backgroundImage.src = localStorage.getItem('background');
     }
     else {
