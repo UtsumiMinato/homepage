@@ -163,6 +163,7 @@ body{
 .search-bar{
     outline: none; /* 取消點擊邊框 */
     background-color: rgba(255, 255, 255, 0.418);
+    box-shadow: 0 2px 5px rgba(133, 133, 133, 0.2);
     border: 0px;
     border-radius: 5px;
     padding: 0 40px 0 40px;
