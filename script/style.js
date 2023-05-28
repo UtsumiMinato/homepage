@@ -54,8 +54,8 @@ cancleBtn.addEventListener('click',() => {
 })
 
 backgroundSettingResetBtn.addEventListener('click',()=>{
-    document.cookie = `backgroundBlur=0; expires=Tue, 19 Jan 2038 03:14:07 GMT; SameSite=none; Secure`;
-    backgroundBlur.style.backdropFilter = `blur(0px)`;
+    document.cookie = `backgroundBlur=2.5; expires=Tue, 19 Jan 2038 03:14:07 GMT; SameSite=none; Secure`;
+    backgroundBlur.style.backdropFilter = `blur(2.5px)`;
     backgroundImage.src = './/background//andre-benz-cXU6tNxhub0-unsplash-1080.jpg';
     localStorage.removeItem('background');
 })
@@ -368,14 +368,14 @@ function config(){
         backgroundBlurValue.value = `${getCookie('backgroundBlur')}`;
     }
     else if(getCookie('backgroundBlur') === undefined){
-        backgroundBlurValue.value = `0`;
+        backgroundBlurValue.value = `2.5`;
     }
     
     if (localStorage.getItem('background') != undefined){//設定背景圖片
         backgroundImage.src = localStorage.getItem('background');
     }
     else {
-        backgroundImage.src = './/background//tianshu-liu-aqZ3UAjs_M4-unsplash.jpg';
+        backgroundImage.src = './/background/samantha-hendrata-wffp0K8sr7s-unsplash.jpg';
     }
 
     
