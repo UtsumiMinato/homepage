@@ -54,7 +54,7 @@ cancleBtn.addEventListener('click',() => {
 })
 
 backgroundSettingResetBtn.addEventListener('click',()=>{
-    document.cookie = `backgroundBlur=0.7; expires=Tue, 19 Jan 2038 03:14:07 GMT; SameSite=none; Secure`;
+    document.cookie = `backgroundBlur=0; expires=Tue, 19 Jan 2038 03:14:07 GMT; SameSite=none; Secure`;
     backgroundBlur.style.backdropFilter = `blur(0px)`;
     backgroundImage.src = './/background//andre-benz-cXU6tNxhub0-unsplash-1080.jpg';
     localStorage.removeItem('background');
@@ -367,8 +367,8 @@ function config(){
         backgroundBlur.style.backdropFilter = `Blur(${getCookie('backgroundBlur')}px)`;
         backgroundBlurValue.value = `${getCookie('backgroundBlur')}`;
     }
-    else if(getCookie('backgroundBlur') != undefined === false){
-        backgroundBlurValue.value = `0.7`;
+    else if(getCookie('backgroundBlur') === undefined){
+        backgroundBlurValue.value = `0`;
     }
     
     if (localStorage.getItem('background') != undefined){//設定背景圖片
