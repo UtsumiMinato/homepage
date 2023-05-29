@@ -368,7 +368,8 @@ function config(){
         backgroundBlurValue.value = `${getCookie('backgroundBlur')}`;
     }
     else{
-        backgroundBlurValue.value = `2.5`;
+        backgroundBlurValue.value = 2.5;
+        backgroundBlur.style.backdropFilter = `blur(${backgroundBlurValue.value}px)`;
     }
     
     if (localStorage.getItem('background')){//設定背景圖片
