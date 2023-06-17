@@ -14,7 +14,7 @@ function startTime(){
   else if (hh >= 12){
     document.getElementById('clock').innerText = 'PM' + ' ' + hh + " " +  mm;
   }
-  document.querySelector('.date').innerHTML = mon+1 + window[nowLanguage].monthFont + date + window[nowLanguage].dateFont + '　' + window[nowLanguage].dayFont[day];
+  document.querySelector('.date').innerText = mon+1 + window[nowLanguage].monthFont + date + window[nowLanguage].dateFont + '　' + window[nowLanguage].dayFont[day];
   
   let timeoutId = setTimeout(startTime, 1000);
 }
