@@ -7,6 +7,9 @@ let backgroundBlur = document.querySelector('#bg-m');
 let backgroundBlurValue = document.querySelector('#background-blur-value');
 let backgroundSettingResetBtn = document.querySelector('#background-setting-reset-btn');
 
+let setCookie = (key, value)=>{
+    document.cookie = `${key}=${value}; expires=Tue, 19 Jan 2038 03:14:07 GMT; SameSite=none; Secure`;
+}
 
 function valueChange(){
     languageSelect = document.querySelector('#language-select').value + '';
@@ -31,7 +34,7 @@ function backgroundSet() {
 
 function backgroundBlurSet(){
     backgroundBlur.style.backdropFilter = `blur(${backgroundBlurValue.value}px)`;
-    document.cookie = `backgroundBlur=${backgroundBlurValue.value}; expires=Tue, 19 Jan 2038 03:14:07 GMT; SameSite=none; Secure`;
+    setCookie('backgroundBlur', backgroundBlurValue.value);
 }
 
 applyBtn.addEventListener('click',() => {
@@ -54,7 +57,7 @@ cancleBtn.addEventListener('click',() => {
 })
 
 backgroundSettingResetBtn.addEventListener('click',()=>{
-    document.cookie = `backgroundBlur=2.5; expires=Tue, 19 Jan 2038 03:14:07 GMT; SameSite=none; Secure`;
+    setCookie('backgroundBlur', '2.5');
     backgroundBlur.style.backdropFilter = `blur(2.5px)`;
     backgroundImage.src = './/background//andre-benz-cXU6tNxhub0-unsplash-1080.jpg';
     localStorage.removeItem('background');
@@ -84,7 +87,7 @@ let backgroundResetBtn = document.querySelector('#background-setting-reset-btn')
 let clockResetBtn = document.querySelector('#colok-color-reset-btn');
 
 clockResetBtn.addEventListener('click', ()=>{
-    document.cookie = `ClockColor=#f0f8ff; expires=Tue, 19 Jan 2038 03:14:07 GMT; SameSite=none; Secure`;
+    setCookie('ClockColor', '#f0f8ff');
 })
 
 
@@ -175,7 +178,7 @@ function chineseTraditionalSet(){
         siteEditBtn[i].innerText = chineseTraditional.siteSettingBtnFont;
     }
     
-    document.cookie = `language=chineseTraditional; expires=Tue, 19 Jan 2038 03:14:07 GMT; SameSite=none; Secure`;
+    setCookie('language', 'chineseTraditional');
 }
 
 function japaneseSet(){
@@ -201,7 +204,7 @@ function japaneseSet(){
     for (i=0;i<4;i++){
         siteEditBtn[i].innerText = japanese.siteSettingBtnFont;
     }
-    document.cookie = `language=japanese; expires=Tue, 19 Jan 2038 03:14:07 GMT; SameSite=none; Secure`;
+    setCookie('language', 'japanese');
 }
 
 function englishUsSet(){
@@ -228,7 +231,8 @@ function englishUsSet(){
     for (i=0;i<4;i++){
         siteEditBtn[i].innerText = englishUs.siteSettingBtnFont;
     }
-    document.cookie = `language=englishUs; expires=Tue, 19 Jan 2038 03:14:07 GMT; SameSite=none; Secure`;
+
+    setCookie('language', 'englishUs');
 }
 function languageSet(language){
     if(document.cookie.length === 0){
@@ -291,26 +295,28 @@ function settingSiteMenu(){
     if(siteMenuSwitch === true){
         siteMenu.style.display = 'flex';
         linkSettingMenu.style.display = '';
-        document.cookie = `linkSettingMenu=''; expires=Tue, 19 Jan 2038 03:14:07 GMT; SameSite=none; Secure`;
-        document.cookie = `siteMenu=true; expires=Tue, 19 Jan 2038 03:14:07 GMT; SameSite=none; Secure`;
+
+        setCookie('linkSettingMenu', ' ');
+        setCookie('siteMenu', 'true');
     }
     else if (siteMenuSwitch === false){
         siteMenu.style.display = 'none';
         linkSettingMenu.style.display = 'none';
-        document.cookie = `linkSettingMenu=none; expires=Tue, 19 Jan 2038 03:14:07 GMT; SameSite=none; Secure`;
-        document.cookie = `siteMenu=false; expires=Tue, 19 Jan 2038 03:14:07 GMT; SameSite=none; Secure`;
+
+        setCookie('linkSettingMenu', 'none');
+        setCookie('siteMenu', 'false');
     }
 }
 
 function siteMenuConfig(siteMenuStatus){
     if (siteMenuStatus === 'true'){
         siteMenu.style.display = 'flex';
-        document.cookie = `siteMenu=true; expires=Tue, 19 Jan 2038 03:14:07 GMT; SameSite=none; Secure`;
+        setCookie('siteMenu', 'true')
         document.querySelector('#site-menu-switch').checked = true;
     }
     else if (siteMenuStatus === 'false'){
         siteMenu.style.display = 'none';
-        document.cookie = `siteMenu=false; expires=Tue, 19 Jan 2038 03:14:07 GMT; SameSite=none; Secure`;
+        setCookie('siteMenu', 'false');
     }
 }
 
@@ -319,15 +325,15 @@ function siteMenuConfig(siteMenuStatus){
 function setSite(num){
     document.querySelector(`#site-name-show-${num}`).innerText = document.querySelector(`#site-name-${num}`).value;
     document.querySelector(`#site-url-${num}`).href = document.querySelector(`#site-url-input-${num}`).value;
-    document.cookie = `sitename${num} = ${document.querySelector(`#site-name-${num}`).value}; expires=Tue, 19 Jan 2038 03:14:07 GMT; SameSite=none; Secure`;
-    document.cookie = `siteurl${num} = ${document.querySelector(`#site-url-input-${num}`).value}; expires=Tue, 19 Jan 2038 03:14:07 GMT; SameSite=none; Secure`;
+    setCookie(`sitename${num}`, `${document.querySelector(`#site-name-${num}`).value}`);
+    setCookie(`siteurl${num}`,  `${document.querySelector(`#site-url-input-${num}`).value}`);
 }
 
 let fontColor = document.querySelector('#font-color-select');
 let clockFont = document.querySelector('#clock');
 let setClockFontColor = ()=>{
     clockFont.style.color = fontColor.value;
-    document.cookie = `ClockColor=${fontColor.value}; expires=Tue, 19 Jan 2038 03:14:07 GMT; SameSite=none; Secure`;
+    setCookie('ClockColor', `${fontColor.value}`);
 }
 
 
