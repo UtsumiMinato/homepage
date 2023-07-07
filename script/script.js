@@ -99,19 +99,19 @@ function sendWords(){
     searchBar.value = ''
     
   }
-  else if (searchEngine === 'google'){
+  else if (searchEngine === 'Google'){
     let searchUrl = "https://www.google.com/search?q=" + searchBar.value
     document.location.href=searchUrl;
     searchBar.value = ''
     
   }
-  else if (searchEngine === 'yahoo'){
+  else if (searchEngine === 'Yahoo'){
     let searchUrl = "https://tw.search.yahoo.com/search?p=" + searchBar.value
     document.location.href=searchUrl;
     searchBar.value = ''
     
   }
-  else if (searchEngine === 'bing'){
+  else if (searchEngine === 'Bing'){
     let searchUrl = "https://www.bing.com/search?q=" + searchBar.value
     document.location.href=searchUrl;
     searchBar.value = ''

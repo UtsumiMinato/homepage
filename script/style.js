@@ -15,6 +15,21 @@ function valueChange(){
     languageSelect = document.querySelector('#language-select').value + '';
     searchEngine = document.querySelector('#search-engine-select').value;
     backgroundBlurValue = document.querySelector('#background-blur-value');
+    switch (nowLanguage){
+        case 'chineseTraditional':
+            serachFont.placeholder = `使用 ${searchEngine} 搜尋或輸入網址`;
+            console.log(nowLanguage);
+            break;
+        case 'japanese':
+            serachFont.placeholder = `${document.querySelector('#search-engine-select').value} で検索、または URL を入力します`;
+            console.log(nowLanguage);
+            break;
+        case 'englishUs':
+            serachFont.placeholder = `Search with ${searchEngine} or enter address`;
+            console.log(nowLanguage);
+            break;
+    }
+    
 }
 
 function backgroundSet() {
@@ -98,7 +113,7 @@ var chineseTraditional = {
         'languageTitle':'語言:',
         'fontFamilyTitle':'字型:',
         'searchEngineTitle':'搜尋引擎:',
-        'searchFont':'使用 Google 搜尋或輸入網址',
+        'searchFont':`使用 ${searchEngine} 搜尋或輸入網址`,
         'cancleFont':'取消',
         'applyFont':'套用',
         'monthFont':'月',
@@ -118,7 +133,7 @@ var japanese = {
         'languageTitle': '言語:', 
         'fontFamilyTitle':'フォント:',
         'searchEngineTitle': '検索エンジン:', 
-        'searchFont':'Google で検索、または URL を入力します',
+        'searchFont':`${document.querySelector('#search-engine-select').value} で検索、または URL を入力します`,
         'cancleFont':'キャンセル',
         'applyFont':'アプライ',
         'monthFont':'月',
@@ -138,7 +153,7 @@ var englishUs = {
         'languageTitle':'Language:', 
         'fontFamilyTitle':'Fonts:',
         'searchEngineTitle':'Search engine:',
-        'searchFont':'Search with Google or enter address',
+        'searchFont':`Search with ${searchEngine} or enter address`,
         'cancleFont': 'cancle',
         'applyFont': 'apply',
         'monthFont':'/',
@@ -186,7 +201,7 @@ function japaneseSet(){
     selectIimageTitlefont.innerText = japanese.selectIimageTitle;
     languageTitlefont.innerText = japanese.languageTitle;
     searchEngineTitlefont.innerText = japanese.searchEngineTitle;
-    serachFont.placeholder = japanese.searchFont;
+    serachFont.placeholder = `${document.querySelector('#search-engine-select').value} で検索、または URL を入力します`;
     applyBtn.innerText = japanese.applyFont;
     cancleBtn.innerText = japanese.cancleFont;
     japaneseOption.selected = true;
