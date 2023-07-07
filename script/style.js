@@ -100,7 +100,8 @@ let siteEditBtn = document.querySelectorAll('.site-edit');
 let backgroundBlurText = document.querySelector('#background-blur-text');
 let backgroundResetBtn = document.querySelector('#background-setting-reset-btn');
 let clockResetBtn = document.querySelector('#colok-color-reset-btn');
-
+let fontColorTitle = document.querySelector('#font-color-setting-title');
+let fontColorClock = document.querySelector('#font-color-setting-clock-title');
 clockResetBtn.addEventListener('click', ()=>{
     setCookie('ClockColor', '#f0f8ff');
 })
@@ -125,7 +126,8 @@ var chineseTraditional = {
         'siteSettingBtnFont':'確定',
         'backgroundBlurTextFont':'模糊度',
         'resetFont':'重設',
-        'fontColorTitle':'文字顏色：',
+        'fontColorTitleFont':'主題',
+        'fontColorClockFont' : '時鐘',
     }
 var japanese = {
         'backgroundTitle':'壁紙：',
@@ -145,7 +147,8 @@ var japanese = {
         'siteSettingBtnFont':'設定',
         'backgroundBlurTextFont':'ぼかし度',
         'resetFont':'リセット',
-        'fontColorTitle':'文字顏色：',
+        'fontColorTitleFont':'テーマ：',
+        'fontColorClockFont' : '時計',
     }
 var englishUs = {
         'backgroundTitle':'Wallpaper:',
@@ -165,7 +168,8 @@ var englishUs = {
         'siteSettingBtnFont':'Done',
         'backgroundBlurTextFont':'Blur',
         'resetFont':'Reset',
-        'fontColorTitle':'文字顏色：',
+        'fontColorTitleFont':'theme：',
+        'fontColorClockFont' : 'Clock',
     }
 
 
@@ -186,6 +190,8 @@ function chineseTraditionalSet(){
     backgroundBlurText.innerText = chineseTraditional.backgroundBlurTextFont;
     backgroundResetBtn.innerText = chineseTraditional.resetFont;
     clockResetBtn.innerText = chineseTraditional.resetFont;
+    fontColorTitle.innerText = chineseTraditional.fontColorTitleFont;
+    fontColorClock.innerText = chineseTraditional.fontColorClockFont;
     for (i=0;i<4;i++){
         siteName[i].placeholder = chineseTraditional.siteNameFont;
     }
@@ -213,6 +219,8 @@ function japaneseSet(){
     backgroundBlurText.innerText = japanese.backgroundBlurTextFont;
     backgroundResetBtn.innerText = japanese.resetFont;
     clockResetBtn.innerText = japanese.resetFont;
+    fontColorTitle.innerText = japanese.fontColorTitleFont;
+    fontColorClock.innerText = japanese.fontColorClockFont;
     for (i=0;i<4;i++){
         siteName[i].placeholder = japanese.siteNameFont;
     }
@@ -239,7 +247,8 @@ function englishUsSet(){
     backgroundBlurText.innerText = englishUs.backgroundBlurTextFont;
     backgroundResetBtn.innerText = englishUs.resetFont;
     clockResetBtn.innerText = englishUs.resetFont;
-
+    fontColorTitle.innerText = englishUs.fontColorTitleFont;
+    fontColorClock.innerText = englishUs.fontColorClockFont;
     for (i=0;i<4;i++){
         siteName[i].placeholder = englishUs.siteNameFont;
     }
