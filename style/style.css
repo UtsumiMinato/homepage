@@ -211,7 +211,7 @@ body{
     font-size: 16px;
     font-family: 'Noto Sans TC', sans-serif;
 }
-.side-menu-cancle:hover,.side-menu-apply:hover,#select-image-title,#background-setting-reset-btn:hover, #colok-color-reset-btn:hover{
+.side-menu-cancle:hover,.side-menu-apply:hover,#select-image-title,#background-setting-reset-btn:hover, #theme-color-reset-btn:hover{
     background: #e0e0e0;
     transition-duration: 300ms;
 }
@@ -256,7 +256,7 @@ body{
 }
 
 
-#background-setting-reset-btn, #colok-color-reset-btn{
+#background-setting-reset-btn, #theme-color-reset-btn{
     color: #3f3f3f;
     margin: 0px 5px;
     cursor: pointer;

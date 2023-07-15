@@ -64,6 +64,8 @@ applyBtn.addEventListener('click',() => {
 
     setClockFontColor();
 
+    setDateFontColor();
+
 })
 
 cancleBtn.addEventListener('click',() => {
@@ -99,11 +101,12 @@ let siteName = document.querySelectorAll('.site-name');
 let siteEditBtn = document.querySelectorAll('.site-edit');
 let backgroundBlurText = document.querySelector('#background-blur-text');
 let backgroundResetBtn = document.querySelector('#background-setting-reset-btn');
-let clockResetBtn = document.querySelector('#colok-color-reset-btn');
+let themeResetBtn = document.querySelector('#theme-color-reset-btn');
 let fontColorTitle = document.querySelector('#font-color-setting-title');
 let fontColorClock = document.querySelector('#font-color-setting-clock-title');
-clockResetBtn.addEventListener('click', ()=>{
+themeResetBtn.addEventListener('click', ()=>{
     setCookie('ClockColor', '#f0f8ff');
+    setCookie('DateColor', '#f0f8ff');
 })
 
 
@@ -189,7 +192,7 @@ function chineseTraditionalSet(){
     linkMenuSettingTitleFont.innerText = chineseTraditional.linkMenuSettingTitle;
     backgroundBlurText.innerText = chineseTraditional.backgroundBlurTextFont;
     backgroundResetBtn.innerText = chineseTraditional.resetFont;
-    clockResetBtn.innerText = chineseTraditional.resetFont;
+    themeResetBtn.innerText = chineseTraditional.resetFont;
     fontColorTitle.innerText = chineseTraditional.fontColorTitleFont;
     fontColorClock.innerText = chineseTraditional.fontColorClockFont;
     for (i=0;i<4;i++){
@@ -218,7 +221,7 @@ function japaneseSet(){
     linkMenuSettingTitleFont.innerText = japanese.linkMenuSettingTitle;
     backgroundBlurText.innerText = japanese.backgroundBlurTextFont;
     backgroundResetBtn.innerText = japanese.resetFont;
-    clockResetBtn.innerText = japanese.resetFont;
+    themeResetBtn.innerText = japanese.resetFont;
     fontColorTitle.innerText = japanese.fontColorTitleFont;
     fontColorClock.innerText = japanese.fontColorClockFont;
     for (i=0;i<4;i++){
@@ -246,7 +249,7 @@ function englishUsSet(){
     linkMenuSettingTitleFont.innerText = englishUs.linkMenuSettingTitle;
     backgroundBlurText.innerText = englishUs.backgroundBlurTextFont;
     backgroundResetBtn.innerText = englishUs.resetFont;
-    clockResetBtn.innerText = englishUs.resetFont;
+    themeResetBtn.innerText = englishUs.resetFont;
     fontColorTitle.innerText = englishUs.fontColorTitleFont;
     fontColorClock.innerText = englishUs.fontColorClockFont;
     for (i=0;i<4;i++){
@@ -360,6 +363,13 @@ let setClockFontColor = ()=>{
     setCookie('ClockColor', `${clockFontColor.value}`);
 }
 
+let dateFontColor = document.querySelector('#date-font-color-select');
+let dateFont = document.querySelector('.date');
+let setDateFontColor = () =>{
+    dateFont.style.color = dateFontColor.value;
+    setCookie('DateColor', `${dateFontColor.value}`);
+}
+
 
 
 function config(){
@@ -377,6 +387,15 @@ function config(){
     }else{
         clockFontColor.value = '#f0f8ff';
         clockFont.style.color = '#f0f8ff';
+    }
+
+    if(getCookie('DateColor')){
+        let color = getCookie('DateColor');
+        dateFont.style.color = color;
+        dateFontColor.value = color;
+    }else{
+        dateFontColor.value = '#f0f8ff';
+        dateFont.style.color = '#f0f8ff';
     }
 
     for (i = 1; i<5; i++){
