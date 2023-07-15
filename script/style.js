@@ -105,6 +105,8 @@ let themeResetBtn = document.querySelector('#theme-color-reset-btn');
 let themeTitle = document.querySelector('#font-color-setting-title');
 let fontColorClock = document.querySelector('#font-color-setting-clock-title');
 let fontColorDate = document.querySelector('#font-color-setting-date-title');
+let languageTitleP = document.querySelector('#language-title-p');
+let searchEngineTitleP = document.querySelector('#search-engine-title-p');
 themeResetBtn.addEventListener('click', ()=>{
     setCookie('ClockColor', '#f0f8ff');
     setCookie('DateColor', '#f0f8ff');
@@ -118,6 +120,8 @@ var chineseTraditional = {
         'languageTitle':'語言:',
         'fontFamilyTitle':'字型:',
         'searchEngineTitle':'搜尋引擎:',
+        'searchEngineTitleP':'搜尋引擎',
+        'languageTitleP':'語言',
         'searchFont':`使用 ${searchEngine} 搜尋或輸入網址`,
         'cancleFont':'取消',
         'applyFont':'套用',
@@ -139,7 +143,9 @@ var japanese = {
         'selectIimageTitle': '画像を選択',
         'languageTitle': '言語:', 
         'fontFamilyTitle':'フォント:',
-        'searchEngineTitle': '検索エンジン:', 
+        'searchEngineTitle': '検索エンジン:',
+        'searchEngineTitleP':'検索エンジン',
+        'languageTitleP':'言語', 
         'searchFont':`${document.querySelector('#search-engine-select').value} で検索、または URL を入力します`,
         'cancleFont':'キャンセル',
         'applyFont':'アプライ',
@@ -162,6 +168,8 @@ var englishUs = {
         'languageTitle':'Language:', 
         'fontFamilyTitle':'Fonts:',
         'searchEngineTitle':'Search engine:',
+        'searchEngineTitleP':'Search engine',
+        'languageTitleP':'Language',
         'searchFont':`Search with ${searchEngine} or enter address`,
         'cancleFont': 'cancle',
         'applyFont': 'apply',
@@ -200,6 +208,8 @@ function chineseTraditionalSet(){
     themeTitle.innerText = chineseTraditional.theme;
     fontColorClock.innerText = chineseTraditional.fontColorClockFont;
     fontColorDate.innerText = chineseTraditional.fontColorDateFont;
+    languageTitleP.innerText = chineseTraditional.languageTitleP;
+    searchEngineTitleP.innerText = chineseTraditional.searchEngineTitleP;
     for (i=0;i<4;i++){
         siteName[i].placeholder = chineseTraditional.siteNameFont;
     }
@@ -230,6 +240,8 @@ function japaneseSet(){
     themeTitle.innerText = japanese.theme;
     fontColorClock.innerText = japanese.fontColorClockFont;
     fontColorDate.innerText = japanese.fontColorDateFont;
+    languageTitleP.innerText = japanese.languageTitleP;
+    searchEngineTitleP.innerText = japanese.searchEngineTitleP;
     for (i=0;i<4;i++){
         siteName[i].placeholder = japanese.siteNameFont;
     }
@@ -259,6 +271,8 @@ function englishUsSet(){
     themeTitle.innerText = englishUs.theme;
     fontColorClock.innerText = englishUs.fontColorClockFont;
     fontColorDate.innerText = englishUs.fontColorDateFont;
+    languageTitleP.innerText = englishUs.languageTitleP;
+    searchEngineTitleP.innerText = englishUs.searchEngineTitleP;
     for (i=0;i<4;i++){
         siteName[i].placeholder = englishUs.siteNameFont;
     }
