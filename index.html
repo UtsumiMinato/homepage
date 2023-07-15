@@ -13,55 +13,70 @@
 
 <div class="side-menu">
     <form action="">
-    <div id="setting-background-menu">
+    <div class="side-menu-option" id="setting-background-menu">
         <h2 id="background-title"></h2>
 
-        <div class="options" style="border-bottom: 0px; justify-content:flex-start;">
-            <label class="file-btn-table" style="height:24px; flex-shrink: 0" >
-                <p id="select-image-title"></p>
-                <input id="background-flie" type="file" name="img" accept="image/*" oninput="changeFileName()">
-            </label>
-            <p id="background-name" style="padding-left: 2%;  ">File：</p>
-        </div>
-        <div class="options" style="border-bottom: 0px;">
-            <p id="background-blur-text" style="display: inline; font-size: 16px;"></p>
-            <input id="background-blur-value" type="text" style="width: 10%; text-align: center; font-size: 14px; height: 18px; background-color:#d1d1d1; border-radius: 3px; border: 1px solid #8a8a8a;" onchange="valueChange();"/>
-        </div>
-        
-        <div class="options" style="border-bottom: 0px; justify-content: end;">
-            <button class="reset-btn" id="background-setting-reset-btn" style="margin: 0px; ">重設</button>
+        <div class="option-table">
+            <div class="options" style="border-bottom: 0px; justify-content:flex-start;">
+                <label class="file-btn-table" style="height:24px; flex-shrink: 0" >
+                    <p id="select-image-title"></p>
+                    <input id="background-flie" type="file" name="img" accept="image/*" oninput="changeFileName()">
+                </label>
+                <p id="background-name" style="padding-left: 2%;  ">File：</p>
+            </div>
+            <div style="border-bottom: solid 1px #000; padding: 0px;"></div>
+            <div class="options" style="border-bottom: 0px;">
+                <p id="background-blur-text" style="display: inline; font-size: 16px;"></p>
+                <input id="background-blur-value" type="text" style="width: 10%; text-align: center; font-size: 14px; height: 18px; background-color:#d1d1d1; border-radius: 3px; border: 1px solid #8a8a8a;" onchange="valueChange();"/>
+            </div>
+            <div style="border-bottom: solid 1px #000; padding: 0px;"></div>
+            <div class="options" style="border-bottom: 0px; justify-content: end;">
+                <button class="reset-btn" id="background-setting-reset-btn" style="margin: 0px; ">重設</button>
+            </div>
         </div>
     </div>
     
-    <div id="setting-language-menu">
+    <div class="side-menu-option" id="setting-language-menu">
         <h2 id="language-title"></h2>
-        <select class="" id="language-select" name="value" onchange="valueChange();">
-            <option id="chineseTraditionalSet" value="chineseTraditional">中文</option>
-            <option id="englishUsSet" value="englishUs">English</option>
-            <option id="japaneseSet" value="japanese">日本語</option>
-        </select>
+        <div class="option-table">
+            <div class="options">
+                <select class="" id="language-select" name="value" onchange="valueChange();">
+                    <option id="chineseTraditionalSet" value="chineseTraditional">中文</option>
+                    <option id="englishUsSet" value="englishUs">English</option>
+                    <option id="japaneseSet" value="japanese">日本語</option>
+                </select>
+            </div>
+        </div>
         
     </div>
     
     
-    <div id="setting-search-engine-menu">
+    <div class="side-menu-option" id="setting-search-engine-menu">
         <h2 id='search-engine-title'></h2>
-        <select class="" id="search-engine-select" name="value" onchange="valueChange();">
-            <option value="Google">Google</option>
-            <option value="Yahoo">Yahoo</option>
-            <option value="Bing">Bing</option>
-        </select>
+        <div class="option-table">
+            <div class="options">
+                <select class="" id="search-engine-select" name="value" onchange="valueChange();">
+                    <option value="Google">Google</option>
+                    <option value="Yahoo">Yahoo</option>
+                    <option value="Bing">Bing</option>
+                </select>
+            </div>
+        </div>
     </div>
 
-    <div>
+    <div class="side-menu-option">
         <h2 id="link-menu-title"></h2>
-        <p id="link-menu-switch-title" style="display:inline;"></p>
-        <label>
-            <input type="checkbox" name="" id="site-menu-switch" class="checkbox" onchange="settingSiteMenu()">
-            <span class="btn-box">
-              <span class="btn"></span>      
-            </span>
-        </label>
+
+        <div class="option-table">
+        <div class="options">
+            <p id="link-menu-switch-title" style="display:inline;"></p>
+            <label>
+                <input type="checkbox" name="" id="site-menu-switch" class="checkbox" onchange="settingSiteMenu()">
+                <span class="btn-box">
+                  <span class="btn"></span>      
+                </span>
+            </label>
+        </div>
         <div id="link-setting-menu" style="border-bottom: 0px;">
             <h3 id="link-menu-setting-title"></h3>
             <p>1:</p>
@@ -81,23 +96,33 @@
             <input id="site-url-input-4" class="site-url" type="text"placeholder="URL:"/>
             <a id="site4-edit" class="site-edit" onclick="setSite(4)"></a>
         </div>
+        </div>
+
     </div>
 
-    <div id="font-color-setting-menu">
+    <div class="side-menu-option" id="font-color-setting-menu">
         <h2 id="font-color-setting-title"></h2>
-        <div class="options" style="border-bottom: 0px;">
-            <p id="font-color-setting-clock-title" style="display: inline;"></p>
-            <input id="clock-font-color-select" type="color"/>
-        </div>
 
-        <div class="options" style="border-bottom: 0px;">
-            <p id="font-color-setting-date-title" style="display: inline;">日期</p>
-            <input id="date-font-color-select" type="color"/>
-        </div>
+        <div class="option-table">
+
+            <div class="options" style="padding: 5px 0px;">
+                <p id="font-color-setting-clock-title" style="display: inline;"></p>
+                <input id="clock-font-color-select" type="color" style="height: 23px;"/>
+            </div>
+    
+            <div style="border-bottom: solid 1px #000; padding: 0px;"></div>
+
+            <div class="options" style="padding: 5px 0px;">
+                <p id="font-color-setting-date-title" style="display: inline;">日期</p>
+                <input id="date-font-color-select" type="color" style="height: 23px;"/>
+            </div>
+
+            <div style="border-bottom: solid 1px #000; padding: 0px;"></div>
 
         <div class="options" style="border-bottom: 0px; justify-content: end;">
             <button class="reset-btn" id="theme-color-reset-btn" style="margin: 0px; ">重設</button>
         </div>
+    </div>
     </div>
 
     
