@@ -62,7 +62,9 @@ body{
   border-bottom: 0px;
 }
 
-
+input::-webkit-inner-spin-button {
+  appearance: none;
+}
 
 #language{
     position: absolute;
