@@ -102,8 +102,9 @@ let siteEditBtn = document.querySelectorAll('.site-edit');
 let backgroundBlurText = document.querySelector('#background-blur-text');
 let backgroundResetBtn = document.querySelector('#background-setting-reset-btn');
 let themeResetBtn = document.querySelector('#theme-color-reset-btn');
-let fontColorTitle = document.querySelector('#font-color-setting-title');
+let themeTitle = document.querySelector('#font-color-setting-title');
 let fontColorClock = document.querySelector('#font-color-setting-clock-title');
+let fontColorDate = document.querySelector('#font-color-setting-date-title');
 themeResetBtn.addEventListener('click', ()=>{
     setCookie('ClockColor', '#f0f8ff');
     setCookie('DateColor', '#f0f8ff');
@@ -129,8 +130,9 @@ var chineseTraditional = {
         'siteSettingBtnFont':'確定',
         'backgroundBlurTextFont':'模糊度',
         'resetFont':'重設',
-        'fontColorTitleFont':'主題',
+        'theme':'主題',
         'fontColorClockFont' : '時鐘',
+        'fontColorDateFont' : '日期',
     }
 var japanese = {
         'backgroundTitle':'壁紙：',
@@ -150,8 +152,9 @@ var japanese = {
         'siteSettingBtnFont':'設定',
         'backgroundBlurTextFont':'ぼかし度',
         'resetFont':'リセット',
-        'fontColorTitleFont':'テーマ：',
+        'theme':'テーマ：',
         'fontColorClockFont' : '時計',
+        'fontColorDateFont' : '日付',
     }
 var englishUs = {
         'backgroundTitle':'Wallpaper:',
@@ -171,8 +174,9 @@ var englishUs = {
         'siteSettingBtnFont':'Done',
         'backgroundBlurTextFont':'Blur',
         'resetFont':'Reset',
-        'fontColorTitleFont':'theme：',
+        'theme':'theme：',
         'fontColorClockFont' : 'Clock',
+        'fontColorDateFont' : 'Date',
     }
 
 
@@ -193,8 +197,9 @@ function chineseTraditionalSet(){
     backgroundBlurText.innerText = chineseTraditional.backgroundBlurTextFont;
     backgroundResetBtn.innerText = chineseTraditional.resetFont;
     themeResetBtn.innerText = chineseTraditional.resetFont;
-    fontColorTitle.innerText = chineseTraditional.fontColorTitleFont;
+    themeTitle.innerText = chineseTraditional.theme;
     fontColorClock.innerText = chineseTraditional.fontColorClockFont;
+    fontColorDate.innerText = chineseTraditional.fontColorDateFont;
     for (i=0;i<4;i++){
         siteName[i].placeholder = chineseTraditional.siteNameFont;
     }
@@ -222,8 +227,9 @@ function japaneseSet(){
     backgroundBlurText.innerText = japanese.backgroundBlurTextFont;
     backgroundResetBtn.innerText = japanese.resetFont;
     themeResetBtn.innerText = japanese.resetFont;
-    fontColorTitle.innerText = japanese.fontColorTitleFont;
+    themeTitle.innerText = japanese.theme;
     fontColorClock.innerText = japanese.fontColorClockFont;
+    fontColorDate.innerText = japanese.fontColorDateFont;
     for (i=0;i<4;i++){
         siteName[i].placeholder = japanese.siteNameFont;
     }
@@ -250,8 +256,9 @@ function englishUsSet(){
     backgroundBlurText.innerText = englishUs.backgroundBlurTextFont;
     backgroundResetBtn.innerText = englishUs.resetFont;
     themeResetBtn.innerText = englishUs.resetFont;
-    fontColorTitle.innerText = englishUs.fontColorTitleFont;
+    themeTitle.innerText = englishUs.theme;
     fontColorClock.innerText = englishUs.fontColorClockFont;
+    fontColorDate.innerText = englishUs.fontColorDateFont;
     for (i=0;i<4;i++){
         siteName[i].placeholder = englishUs.siteNameFont;
     }
