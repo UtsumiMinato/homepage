@@ -353,11 +353,11 @@ function setSite(num){
     setCookie(`siteurl${num}`,  `${document.querySelector(`#site-url-input-${num}`).value}`);
 }
 
-let fontColor = document.querySelector('#font-color-select');
+let clockFontColor = document.querySelector('#clock-font-color-select');
 let clockFont = document.querySelector('#clock');
 let setClockFontColor = ()=>{
-    clockFont.style.color = fontColor.value;
-    setCookie('ClockColor', `${fontColor.value}`);
+    clockFont.style.color = clockFontColor.value;
+    setCookie('ClockColor', `${clockFontColor.value}`);
 }
 
 
@@ -373,9 +373,9 @@ function config(){
     if(getCookie('ClockColor')){
         let color = getCookie('ClockColor');
         clockFont.style.color = color;
-        fontColor.value = color;
+        clockFontColor.value = color;
     }else{
-        fontColor.value = '#f0f8ff';
+        clockFontColor.value = '#f0f8ff';
         clockFont.style.color = '#f0f8ff';
     }
 
