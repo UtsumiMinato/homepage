@@ -6,15 +6,26 @@ function startTime(){
   let mon = today.getMonth();
   let date = today.getDate();
   let day = today.getDay();
+  let period = hh >= 12 ? 'PM' : 'AM';
+  hh = hh % 12;
+  hh = hh || 12;
+  hh = checkTime(hh);
   mm = checkTime(mm);
   ss = checkTime(ss);
   if (hh <= 11){
-    document.getElementById('clock').innerText = 'AM' + ' ' + hh + " " + mm;
+    if(document.getElementById('clock').innerText !== period + ' ' + hh + " " + mm){
+      document.getElementById('clock').innerText = period + ' ' + hh + " " + mm;
+    }
   }
   else if (hh >= 12){
-    document.getElementById('clock').innerText = 'PM' + ' ' + hh + " " +  mm;
+    if(document.getElementById('clock').innerText !== period + ' ' + hh + " " +  mm){
+      document.getElementById('clock').innerText = period + ' ' + hh + " " +  mm;
+    }
   }
-  document.querySelector('.date').innerText = mon+1 + window[nowLanguage].monthFont + date + window[nowLanguage].dateFont + '　' + window[nowLanguage].dayFont[day];
+
+  if(document.querySelector('.date').innerText !== mon+1 + window[nowLanguage].monthFont + date + window[nowLanguage].dateFont + '　' + window[nowLanguage].dayFont[day]){
+    document.querySelector('.date').innerText = mon+1 + window[nowLanguage].monthFont + date + window[nowLanguage].dateFont + '　' + window[nowLanguage].dayFont[day];
+  }
   
   let timeoutId = setTimeout(startTime, 1000);
 }
