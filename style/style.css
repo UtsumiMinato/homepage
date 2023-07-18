@@ -11,6 +11,10 @@
   color: #3f3f3f;
 }
 
+::-webkit-scrollbar {
+  display: none;
+}
+
 html{
     height: 100%;
     
