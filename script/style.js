@@ -442,15 +442,7 @@ function config(){
         backgroundBlur.style.backdropFilter = `blur(${backgroundBlurValue.value}px)`;
     }
     
-    if (localStorage.getItem('background')){//設定背景圖片
-        backgroundImage.src = localStorage.getItem('background');
-    }
-    else {
-        backgroundImage.src = './/background/samantha-hendrata-wffp0K8sr7s-unsplash.jpg';
-    }
-
-    
-
+    backgroundImage.src = localStorage.getItem('background') || './/background/samantha-hendrata-wffp0K8sr7s-unsplash.jpg';
     
 }
 
