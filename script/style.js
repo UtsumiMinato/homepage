@@ -81,7 +81,7 @@ backgroundSettingResetBtn.addEventListener('click', () => {
     backgroundBlur.style.backdropFilter = `blur(2.5px)`;
     backgroundImage.src =
         './background/samantha-hendrata-wffp0K8sr7s-unsplash.jpg';
-    // localStorage.removeItem('background');
+    localStorage.removeItem('background');
     setBackgroundImg('./background/samantha-hendrata-wffp0K8sr7s-unsplash.jpg');
 });
 
