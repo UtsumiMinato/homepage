@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,125 +13,128 @@
 
 <div class="side-menu">
     <form action="">
-    <div class="side-menu-option" id="setting-background-menu">
-        <h2 id="background-title"></h2>
+        <div class="side-menu-option" id="setting-background-menu">
+            <h2 id="background-title"></h2>
 
-        <div class="option-table">
-            <div class="options" style="border-bottom: 0px; justify-content:flex-start;">
-                <label class="file-btn-table" style="height:24px; flex-shrink: 0" >
-                    <p id="select-image-title"></p>
-                    <input id="background-flie" type="file" name="img" accept="image/*" oninput="changeFileName()">
-                </label>
-                <p id="background-name" style="padding-left: 2%;  ">File：</p>
-            </div>
-            <div class="option-table-line"></div>
-            <div class="options" style="border-bottom: 0px;">
-                <p id="background-blur-text" style="display: inline; font-size: 16px;"></p>
-                <input id="background-blur-value" type="text" style="width: 10%; text-align: center; font-size: 14px; height: 18px; background-color:#d1d1d1; border-radius: 3px; border: 1px solid #8a8a8a; outline-color: #8a8a8a;" onchange="valueChange();"/>
-            </div>
-            <div class="option-table-line"></div>
-            <div class="options" style="border-bottom: 0px; justify-content: end;">
-                <button class="reset-btn" id="background-setting-reset-btn" style="margin: 0px; ">重設</button>
-            </div>
-        </div>
-    </div>
-    
-    <div class="side-menu-option" id="setting-language-menu">
-        <h2 id="language-title"></h2>
-        <div class="option-table">
-            <div class="options">
-                <p id="language-title-p"></p>
-                <select class="" id="language-select" name="value" onchange="valueChange();">
-                    <option id="chineseTraditionalSet" value="chineseTraditional">中文</option>
-                    <option id="englishUsSet" value="englishUs">English</option>
-                    <option id="japaneseSet" value="japanese">日本語</option>
-                </select>
+            <div class="option-table">
+                <div class="options" style="border-bottom: 0px; justify-content:flex-start;">
+                    <label class="file-btn-table" style="height:24px; flex-shrink: 0">
+                        <p id="select-image-title"></p>
+                        <input id="background-flie" type="file" name="img" accept="image/*" oninput="changeFileName()">
+                    </label>
+                    <p id="background-name" style="padding-left: 2%;  ">File：</p>
+                </div>
+                <div class="option-table-line"></div>
+                <div class="options" style="border-bottom: 0px;">
+                    <p id="background-blur-text" style="display: inline; font-size: 16px;"></p>
+                    <input id="background-blur-value" type="text"
+                        style="width: 10%; text-align: center; font-size: 14px; height: 18px; background-color:#d1d1d1; border-radius: 3px; border: 1px solid #8a8a8a; outline-color: #8a8a8a;"
+                        onchange="valueChange();" />
+                </div>
+                <div class="option-table-line"></div>
+                <div class="options" style="border-bottom: 0px; justify-content: end;">
+                    <button class="reset-btn" id="background-setting-reset-btn" style="margin: 0px; ">重設</button>
+                </div>
             </div>
         </div>
-        
-    </div>
-    
-    
-    <div class="side-menu-option" id="setting-search-engine-menu">
-        <h2 id='search-engine-title'></h2>
-        <div class="option-table">
-            <div class="options">
-                <p id="search-engine-title-p"></p>
-                <select class="" id="search-engine-select" name="value" onchange="valueChange();">
-                    <option value="Google">Google</option>
-                    <option value="Yahoo">Yahoo</option>
-                    <option value="Bing">Bing</option>
-                </select>
-            </div>
-        </div>
-    </div>
 
-    <div class="side-menu-option">
-        <h2 id="link-menu-title"></h2>
-
-        <div class="option-table">
-        <div class="options">
-            <p id="link-menu-switch-title" style="display:inline;"></p>
-            <label>
-                <input type="checkbox" name="" id="site-menu-switch" class="checkbox" onchange="settingSiteMenu()">
-                <span class="btn-box">
-                  <span class="btn"></span>      
-                </span>
-            </label>
-        </div>
-        <div id="link-setting-menu" style="border-bottom: 0px;">
-            <h3 id="link-menu-setting-title"></h3>
-            <p>1:</p>
-            <input id="site-name-1" class="site-name" type="text" />
-            <input id="site-url-input-1" class="site-url" type="text" placeholder="URL:"/>
-            <a id="site1-edit" class="site-edit" onclick="setSite(1)"></a>
-            <p>2:</p>
-            <input id="site-name-2" class="site-name" type="text" />
-            <input id="site-url-input-2" class="site-url" type="text"placeholder="URL:"/>
-            <a id="site2-edit" class="site-edit" onclick="setSite(2)"></a>
-            <p>3:</p>
-            <input id="site-name-3" class="site-name" type="text" />
-            <input id="site-url-input-3" class="site-url" type="text" placeholder="URL:"/>
-            <a id="site3-edit" class="site-edit" onclick="setSite(3)"></a>
-            <p>4:</p>
-            <input id="site-name-4" class="site-name" type="text" />
-            <input id="site-url-input-4" class="site-url" type="text"placeholder="URL:"/>
-            <a id="site4-edit" class="site-edit" onclick="setSite(4)"></a>
-        </div>
-        </div>
-
-    </div>
-
-    <div class="side-menu-option" id="font-color-setting-menu">
-        <h2 id="font-color-setting-title"></h2>
-
-        <div class="option-table">
-
-            <div class="options" style="padding: 5px 0px;">
-                <p id="font-color-setting-clock-title" style="display: inline;"></p>
-                <input id="clock-font-color-select" type="color" style="height: 23px;"/>
-            </div>
-    
-            <div class="option-table-line"></div>
-
-            <div class="options" style="padding: 5px 0px;">
-                <p id="font-color-setting-date-title" style="display: inline;">日期</p>
-                <input id="date-font-color-select" type="color" style="height: 23px;"/>
+        <div class="side-menu-option" id="setting-language-menu">
+            <h2 id="language-title"></h2>
+            <div class="option-table">
+                <div class="options">
+                    <p id="language-title-p"></p>
+                    <select class="" id="language-select" name="value" onchange="valueChange();">
+                        <option id="chineseTraditionalSet" value="chineseTraditional">中文</option>
+                        <option id="englishUsSet" value="englishUs">English</option>
+                        <option id="japaneseSet" value="japanese">日本語</option>
+                    </select>
+                </div>
             </div>
 
-            <div class="option-table-line"></div>
-
-        <div class="options" style="border-bottom: 0px; justify-content: end;">
-            <button class="reset-btn" id="theme-color-reset-btn" style="margin: 0px; ">重設</button>
         </div>
-    </div>
-    </div>
 
-    
-    <div style="border: 0px; display:flex; justify-content: flex-end; margin-bottom: 15px;">
-    <a class="side-menu-cancle"></a>
-    <a class="side-menu-apply"></a>
-    </div>
+
+        <div class="side-menu-option" id="setting-search-engine-menu">
+            <h2 id='search-engine-title'></h2>
+            <div class="option-table">
+                <div class="options">
+                    <p id="search-engine-title-p"></p>
+                    <select class="" id="search-engine-select" name="value" onchange="valueChange();">
+                        <option value="Google">Google</option>
+                        <option value="Yahoo">Yahoo</option>
+                        <option value="Bing">Bing</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <div class="side-menu-option">
+            <h2 id="link-menu-title"></h2>
+
+            <div class="option-table">
+                <div class="options">
+                    <p id="link-menu-switch-title" style="display:inline;"></p>
+                    <label>
+                        <input type="checkbox" name="" id="site-menu-switch" class="checkbox"
+                            onchange="settingSiteMenu()">
+                        <span class="btn-box">
+                            <span class="btn"></span>
+                        </span>
+                    </label>
+                </div>
+                <div id="link-setting-menu" style="border-bottom: 0px;">
+                    <h3 id="link-menu-setting-title"></h3>
+                    <p>1:</p>
+                    <input id="site-name-1" class="site-name" type="text" />
+                    <input id="site-url-input-1" class="site-url" type="text" placeholder="URL:" />
+                    <a id="site1-edit" class="site-edit" onclick="setSite(1)"></a>
+                    <p>2:</p>
+                    <input id="site-name-2" class="site-name" type="text" />
+                    <input id="site-url-input-2" class="site-url" type="text" placeholder="URL:" />
+                    <a id="site2-edit" class="site-edit" onclick="setSite(2)"></a>
+                    <p>3:</p>
+                    <input id="site-name-3" class="site-name" type="text" />
+                    <input id="site-url-input-3" class="site-url" type="text" placeholder="URL:" />
+                    <a id="site3-edit" class="site-edit" onclick="setSite(3)"></a>
+                    <p>4:</p>
+                    <input id="site-name-4" class="site-name" type="text" />
+                    <input id="site-url-input-4" class="site-url" type="text" placeholder="URL:" />
+                    <a id="site4-edit" class="site-edit" onclick="setSite(4)"></a>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="side-menu-option" id="font-color-setting-menu">
+            <h2 id="font-color-setting-title"></h2>
+
+            <div class="option-table">
+
+                <div class="options" style="padding: 5px 0px;">
+                    <p id="font-color-setting-clock-title" style="display: inline;"></p>
+                    <input id="clock-font-color-select" type="color" style="height: 23px;" />
+                </div>
+
+                <div class="option-table-line"></div>
+
+                <div class="options" style="padding: 5px 0px;">
+                    <p id="font-color-setting-date-title" style="display: inline;">日期</p>
+                    <input id="date-font-color-select" type="color" style="height: 23px;" />
+                </div>
+
+                <div class="option-table-line"></div>
+
+                <div class="options" style="border-bottom: 0px; justify-content: end;">
+                    <button class="reset-btn" id="theme-color-reset-btn" style="margin: 0px; ">重設</button>
+                </div>
+            </div>
+        </div>
+
+
+        <div style="border: 0px; display:flex; justify-content: flex-end; margin-bottom: 15px;">
+            <a class="side-menu-cancle"></a>
+            <a class="side-menu-apply"></a>
+        </div>
 
     </form>
 </div>
@@ -138,52 +142,59 @@
 
 
 <body onload="config(),startTime()">
-   
+
     <div class="bg">
         <div id="bg-m"></div>
-        <img id="background-image" src=''/>
-        
+        <img id="background-image" src='' />
+
     </div>
-   
-        <div class="wrap">
 
-            <div id="clock-display" style="display: flex; justify-content: center;">
-                <a id="clock"></a>
-            </div>
+    <div class="wrap">
 
-            <div class="line"></div>
-            <div><p class="date"></p></div>
+        <div id="clock-display" style="display: flex; justify-content: center;">
+            <a id="clock"></a>
+        </div>
 
-            <div class="search">
+        <div class="line"></div>
+        <div>
+            <p class="date"></p>
+        </div>
+
+        <div class="search">
             <input class="search-bar" type="search" name="search" id="search" autocomplete="off" placeholder="">
             <!-- <span class="icon-google"><i class="fa-brands fa-google" style="width: 20px;"></i></span> -->
-            <span class="icon-google"><img id="search-btn" src=".\icon\google-brands.png" style="width:20px;"/></span>
-            <span class="icon" id="search-btn-icon"><img id="search-btn" src=".\icon\search-btn.png" style="width:20px;" onclick="searchBtnClick()"></span>
-            </div>
+            <span class="icon-google"><img id="search-btn" src=".\icon\google-brands.png" style="width:20px;" /></span>
+            <span class="icon" id="search-btn-icon"><img id="search-btn" src=".\icon\search-btn.png" style="width:20px;"
+                    onclick="searchBtnClick()"></span>
+        </div>
 
-            <div id="site-menu">
-                <ul style="width:600px; display: flex; justify-content: center;">
-                    <li class="site-link" style="display: inline-block;">
-                        <div class="site-block" id="site-1"><a id="site-url-1" class="site-btn" href="#"><span id="site-name-show-1" class="site-title" ></span></a></div>
-                    </li>
-                    <li class="site-link" style="display: inline-block;">
-                        <div class="site-block" id="site-2"><a id="site-url-2" class="site-btn" href="#"><span id="site-name-show-2" class="site-title" ></span></a></div>
-                    </li>
-                    <li class="site-link" style="display: inline-block;">
-                        <div class="site-block" id="site-3"><a id="site-url-3" class="site-btn" href="#"><span id="site-name-show-3" class="site-title" ></span></a></div>
-                    </li>
-                    <li class="site-link" style="display: inline-block;">
-                        <div class="site-block" id="site-4"><a id="site-url-4" class="site-btn" href="#"><span id="site-name-show-4" class="site-title" ></span></a></div>
-                    </li>
-                    
-                </ul>
-                
-            </div>
+        <div id="site-menu">
+            <ul style="width:600px; display: flex; justify-content: center;">
+                <li class="site-link" style="display: inline-block;">
+                    <div class="site-block" id="site-1"><a id="site-url-1" class="site-btn" href="#"><span
+                                id="site-name-show-1" class="site-title"></span></a></div>
+                </li>
+                <li class="site-link" style="display: inline-block;">
+                    <div class="site-block" id="site-2"><a id="site-url-2" class="site-btn" href="#"><span
+                                id="site-name-show-2" class="site-title"></span></a></div>
+                </li>
+                <li class="site-link" style="display: inline-block;">
+                    <div class="site-block" id="site-3"><a id="site-url-3" class="site-btn" href="#"><span
+                                id="site-name-show-3" class="site-title"></span></a></div>
+                </li>
+                <li class="site-link" style="display: inline-block;">
+                    <div class="site-block" id="site-4"><a id="site-url-4" class="site-btn" href="#"><span
+                                id="site-name-show-4" class="site-title"></span></a></div>
+                </li>
 
+            </ul>
 
         </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/idb-keyval@6/dist/umd.js"></script>
     <script src="./script/script.js?ver=2023071801"></script>
     <script src="./script/style.js?ver=2023071801"></script>
+    <script src="./script/db-handle.js"></script>
 </body>
 
 </html>
